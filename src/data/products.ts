@@ -38,34 +38,122 @@ export const COMPANY_INFO = {
   phones: ['+256 744 477 777', '+256 744 377 777'],
   email: 'info@tianaofurniture.co.ug',
   website: 'https://tianaofurniture.co.ug',
+  pdfPath: '/tianao-catalogue.pdf',
   established: 'July 2024',
   founders: 'Partnership between Uganda Tiantang Group and Hangzhou Aumere Furniture from China',
   factoryArea: '20,000 square meters',
   showroomArea: '1,000 square meters',
   employees: 'Over 100 employees',
-  profileCn: '天奥家具制造有限公司是一家集研发、设计、生产、销售为一体的大中型现代软体家具制造企业。由乌干达天唐集团与中国杭州奥默家具于2024年7月合资成立，位于中乌姆巴莱工业园，目前占地厂房面积20,000平方米，展厅面积1,000平方米，员工100余人。公司拥有先进的生产设备和工艺技术，采用优质原材料，生产高品质的软体家具产品，成为东非区域行业的佼佼者。坚持简约、时尚、清新、自然的设计理念，紧跟国际时尚潮流，彰显独特的文化魅力。未来，天奥家具将继续秉承“创新、卓越、共赢”的企业精神。',
-  profileEn: 'TIANAO Furniture Co., Ltd. is a medium-to-large modern upholstered furniture manufacturing enterprise integrating R&D, design, production, and sales. Established in July 2024 through a partnership between Uganda Tiantang Group and Hangzhou Aumere Furniture from China, located in Sino-Uganda Mbale Industrial Park, currently covering a factory area of 20,000 square meters and a showroom area of 1,000 square meters, with over 100 employees. The company boasts advanced production equipment and technology, utilizing high-quality raw materials to produce top-notch upholstered products, making it a leader in the East African regional and global industry. We adhere to a simple, fashionable, fresh, and natural design philosophy that follows global fashion trends while showcasing a unique cultural charm. In the future, TIANAO Furniture will continue to embrace the corporate spirit of "Innovation, Excellence, and Win-Win".',
+  profileCn: '天奥家具制造有限公司是一家集研发、设计、生产、销售为一体的大中型现代软体家具制造企业。公司于2024年7月由乌干达天唐集团和中国杭州奥默家具合作并成立，坐落于乌干达中乌姆巴莱工业园区，目前厂房占地面积20000平方米，展厅面积1000平方米，员工100余人。公司拥有先进的生产设备和工艺技术，采用优质的原材料，生产高品质的产品，居同行业领先。公司的产品风格多样，注重产品的设计和创新，坚持简约时尚，清新自然的设计风格，紧跟世界时尚潮流，呈现出与众不同的文化气质。天奥家具坚持“好健康、好舒适、好设计、好品质、好服务”的5好发展战略，以优质的产品和服务赢得客户的信赖和好评。公司产品畅销全世界，深受全球消费者喜爱。未来，天奥家具将继续秉承“创新、卓越、共赢”的企业精神，不断提升自身实力，为客户提供更加优质的产品和服务，努力打造成为全球领先的家具品牌。',
+  profileEn: 'TIANAO Furniture Co., Ltd. is a medium-to-large modern upholstered furniture manufacturing enterprise integrating R&D, design, production, and sales. Established in July 2024 through a partnership between Uganda Tiantang Group and Hangzhou Aumere Furniture from China. Located in Sino-Uganda Mbale Industrial Park, currently covering a factory area of 20,000 square meters and a showroom area of 1,000 square meters, with over 100 employees. The company boasts advanced production equipment and technology, utilising high-quality raw materials to produce top-notch products, making it a leader in the industry. Our products are diverse in style, focusing on design and innovation, adhering to a simple, fashionable, fresh, and natural design philosophy that follows global fashion trends while showcasing a unique cultural charm. TIANAO Furniture upholds the Five Excellence Development Strategy of "Good Health, Good Comfort, Good Design, Good Quality, and Good Service", earning the trust and praise of customers with premium products and services. Our products are sold worldwide and are loved by consumers globally. In the future, TIANAO Furniture will continue to embrace the corporate spirit of "Innovation, Excellence, and Win-Win", continuously enhancing its capabilities to provide customers with better products and services, striving to become a globally leading furniture brand.',
   fiveExcellence: [
-    { title: 'Good Health', cn: '好健康', desc: 'Non-toxic, eco-conscious raw materials, zero-pressure comfort, and natural breathability.' },
-    { title: 'Good Comfort', cn: '好舒适', desc: 'High-density rebound sponge and ergonomic contours tailored for restorative rest.' },
-    { title: 'Good Design', cn: '好设计', desc: 'Simple, fashionable, fresh, and natural aesthetics embracing global trends with distinct cultural charm.' },
-    { title: 'Good Quality', cn: '好品质', desc: 'Advanced industrial manufacturing machinery, reinforced platform frames, and precision stitching.' },
-    { title: 'Good Service', cn: '好服务', desc: 'End-to-end bespoke residential, hospitality, and commercial quotation and delivery support.' },
+    { title: 'Good Health', cn: '好健康', desc: 'Non-toxic, eco-conscious raw materials, zero-pressure memory comfort, and natural breathability.' },
+    { title: 'Good Comfort', cn: '好舒适', desc: 'High-density rebound sponge and ergonomic contours tailored for restorative living.' },
+    { title: 'Good Design', cn: '好设计', desc: 'Simple, fashionable, fresh, and natural aesthetics embracing global trends with unique cultural charm.' },
+    { title: 'Good Quality', cn: '好品质', desc: 'Advanced production equipment and technology, reinforced platform frames, and precision upholstery.' },
+    { title: 'Good Service', cn: '好服务', desc: 'Customer-first residential, hospitality, and executive project consultation, customization, and delivery.' },
   ],
   productSeries: [
     { name: 'Modern Luxury Series', cn: '现代豪华系列', desc: 'Architectural scale, top-grain leather, and bold modular statements.' },
-    { name: 'High-End Minimalist Series', cn: '高端极简系列', desc: 'Subtle lines, organic curved geometries, and tactile natural bouclé weaves.' },
+    { name: 'High-End Minimalist Series', cn: '高端极简系列', desc: 'Simple, fashionable, fresh, and natural geometries with sculpted wood and textured bouclé.' },
     { name: 'High-End Simple Luxury Series', cn: '高端简奢系列', desc: 'Integrated smart power motion, cinema consoles, and tailored upholstery.' },
+  ],
+  marqueeStatements: [
+    'Design It Your Way! Choose your colours and fabrics. We customize and deliver your dream in the best quality.',
+    'Design It Your Way! Choose your colours and fabrics. We customize and deliver your dream in the best quality.',
+    'Design It Your Way! Choose your colours and fabrics. We customize and deliver your dream in the best quality.',
   ]
 };
 
 export const PRODUCTS: Product[] = [
   // ==========================================
-  // --- SOFAS (VERIFIED WITH USER IMAGES) ---
+  // --- SIGNATURE NEW SHOWROOM SUITES (1-4) ---
+  // ==========================================
+  {
+    id: 'ta-minimalist-walnut-boucle-sofa',
+    model: 'TA-M04#',
+    name: 'Sculpted Walnut & Ivory Bouclé 3-Seater Sofa',
+    nameCn: '胡桃木极简羊羔绒沙发',
+    category: 'sofas',
+    categoryLabel: 'Minimalist Living Sofa',
+    series: 'High-End Minimalist Series',
+    seriesCn: '高端极简系列',
+    tagline: 'Creating such an ideal home environment does not mean the need for luxury and complexity.',
+    taglineCn: '打造这样一个理想的家居环境，并不意味需要奢华繁复。用经营自己的家，就是对生活最好的致敬。',
+    description: 'Clean, organic curved-arm three-seater sofa upholstered in breathable ivory bouclé fabric and anchored by sculpted solid walnut corner legs — embodying TIANAO’s simple, fashionable, fresh, and natural design philosophy.',
+    dimensions: {
+      length: '240 cm',
+      depth: '98 cm',
+      height: '78 cm',
+      breakdown: 'Matching Single Lounge Armchair (TA-M02#) available'
+    },
+    matchingItems: 'Pairs with Sculpted Walnut & Ivory Bouclé Lounge Armchair (TA-M02#)',
+    materials: ['Textured Ivory Bouclé Fabric', 'Sculpted Solid Walnut Wood Legs', 'High-Density Rebound Sponge'],
+    colors: ['Warm Ivory Bouclé & Walnut', 'Oatmeal Cream'],
+    features: ['Sculpted solid walnut wrap-around corner legs', 'Plush loose feather-touch back pillows', 'Breathable textured bouclé upholstery'],
+    pageNumber: 7,
+    featured: true,
+    heroImage: IMAGES.boucleSofaRoom,
+    detailImage: IMAGES.boucleChairAngle,
+  },
+  {
+    id: 'ta-executive-reception-suite',
+    model: 'TA-EX01#',
+    name: 'Espresso Executive & Lounge 1+1+3 Sofa Suite',
+    nameCn: '尊享商务会客真皮沙发组合',
+    category: 'sofas',
+    categoryLabel: 'Executive & Living Suite (1+1+3)',
+    series: 'Modern Luxury Series',
+    seriesCn: '现代豪华系列',
+    tagline: 'Enterprising and exploring the peak of the industry — designed for residences, lounges, and leadership spaces.',
+    taglineCn: '锐意探索行业巅峰，兼具现代家居客厅与高端商务会客的沉稳气度。',
+    description: 'Complete 1+1+3 architectural leather seating suite in deep espresso brown featuring wide padded armrests, tailored lumbar cushions, and solid low-profile plinth feet for executive receptions and grand living rooms.',
+    dimensions: {
+      length: '235 cm (3-Seater)',
+      depth: '96 cm',
+      height: '82 cm',
+      breakdown: 'Suite includes 1× 3-Seater (235 cm) + 2× Single Armchairs (108 cm each)'
+    },
+    matchingItems: 'Compatible with dual sintered-stone & wire-base coffee table pair',
+    materials: ['Top-Grain Espresso Leather', 'High-Density Rebound Sponge', 'Kiln-Dried Solid Hardwood Frame'],
+    colors: ['Deep Espresso Brown', 'Obsidian Charcoal'],
+    features: ['Complete 1+1+3 modular suite configuration', 'Integrated lumbar bolster pillows per seat', 'Wide architectural padded armrests'],
+    pageNumber: 12,
+    featured: true,
+    heroImage: IMAGES.executiveSuite1,
+  },
+  {
+    id: 'ta-minimalist-walnut-boucle-chair',
+    model: 'TA-M02#',
+    name: 'Sculpted Walnut & Ivory Bouclé Lounge Armchair',
+    nameCn: '胡桃木角柱羊羔绒单人椅',
+    category: 'chairs-tables',
+    categoryLabel: 'Designer Lounge Chair',
+    series: 'High-End Minimalist Series',
+    seriesCn: '高端极简系列',
+    tagline: 'Simple, fashionable, fresh, and natural — a quiet harbor for restorative pause.',
+    taglineCn: '坚持简约、时尚、清新、自然的设计理念，营造温馨惬意的居家角落。',
+    description: 'Deep single lounge armchair combining enveloping rounded bouclé upholstery with precision-carved solid walnut corner supports and an oversized lumbar cushion.',
+    dimensions: {
+      length: '96 cm',
+      width: '94 cm',
+      height: '78 cm'
+    },
+    matchingItems: 'Matching 3-Seater Sofa (TA-M04#) available',
+    materials: ['Textured Ivory Bouclé Fabric', 'Solid Walnut Sculpted Base', 'High-Resilience Molded Sponge'],
+    colors: ['Warm Ivory Bouclé & Walnut'],
+    features: ['Signature triangular walnut corner legs', 'Deep pocketed seat cushion', 'Coordinating loose square back cushion'],
+    pageNumber: 27,
+    featured: true,
+    heroImage: IMAGES.boucleChairAngle,
+    detailImage: IMAGES.boucleChairFront,
+  },
+  // ==========================================
+  // --- SOFAS (VERIFIED WITH PDF CATALOGUE) ---
   // ==========================================
   {
     id: 'taq106-sugar-cube-sofa',
-    model: 'TAQ106#',
+    model: 'TA9106#',
     name: 'Sugar Cube Sectional & Lounge Sofa',
     nameCn: '方糖沙发',
     category: 'sofas',
@@ -78,7 +166,7 @@ export const PRODUCTS: Product[] = [
       length: '296 cm',
       depth: '96 cm',
       height: '74 cm',
-      breakdown: 'L-shape chaise configuration depth: 198 cm'
+      breakdown: 'L-shape chaise configuration depth: 188 cm × 96 cm'
     },
     materials: ['Italian Saddle Leather', 'High-Density Resilient Core', 'Black Coated Hardwood Feet'],
     colors: ['Cognac Caramel Leather', 'Pure Ivory White'],
@@ -90,7 +178,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'taq070-olive-modular-sofa',
-    model: 'TAQ070#',
+    model: 'TA9092#',
     name: 'Olive Minimalist Low-Profile Sofa',
     nameCn: '橄榄绿极简低矮沙发',
     category: 'sofas',
@@ -100,10 +188,10 @@ export const PRODUCTS: Product[] = [
     tagline: 'Adhering to a simple, fashionable, fresh, and natural design philosophy.',
     description: 'Contemporary two-module expansive sofa wrapped in rich olive green leather with floating black metal perimeter base and loose back bolsters.',
     dimensions: {
-      length: '359 cm',
+      length: '318 cm',
       depth: '112 cm',
       height: '76 cm',
-      breakdown: 'Dual primary sections (159cm + 159cm) with low-profile arms'
+      breakdown: 'Dual primary sections (159 cm + 159 cm) with low-profile arms'
     },
     materials: ['Supple Semi-Aniline Leather', 'Multi-Layer High-Resilience Foam', 'Low-Profile Architectural Steel Base'],
     colors: ['Olive Green', 'Warm Stone Taupe'],
@@ -115,7 +203,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'taq103-piano-key-sofa',
-    model: 'TAQ103#',
+    model: 'TA9070#',
     name: 'Piano Key Sectional Sofa',
     nameCn: '钢琴键',
     category: 'sofas',
@@ -123,24 +211,24 @@ export const PRODUCTS: Product[] = [
     series: 'High-End Minimalist Series',
     seriesCn: '高端极简系列',
     tagline: 'Let home become a warm harbor, decorate every corner with love.',
-    taglineCn: '让家成为温馨的港湾，用爱装点每一个角落。',
+    taglineCn: '让家成为温馨的港湾，用爱装点每一个角落。欢迎来到我们的家居世界，这里汇聚了对生活无尽的热爱与想象。',
     description: 'Iconic sectional characterized by precision rhythmic vertical tufting reminiscent of piano keys, accompanied by an integrated side console shelf and adjustable lumbar supports.',
     dimensions: {
-      length: '429 cm',
+      length: '435 cm',
       depth: '112 cm',
       height: '82 cm',
-      breakdown: '197cm + 40cm console + 172cm + 20cm arm return'
+      breakdown: '197 cm + 40 cm console + 172 cm + 26 cm arm return'
     },
     materials: ['High-Performance Microfiber & Tech Suede', 'High-Resilience Cold-Cured Sponge', 'Solid Birch Inner Framework'],
     colors: ['Granite Slate Grey', 'Anthracite Black'],
     features: ['Piano-key vertical channel stitching', 'Integrated center storage/drink ledge', 'Low ergonomic silhouette', 'Heavyweight stability'],
     pageNumber: 6,
-    featured: true,
+    featured: false,
     heroImage: IMAGES.taq103,
   },
   {
     id: 'taq078-big-black-bull-sofa',
-    model: 'TAQ078#',
+    model: 'TA9078#',
     name: 'Big Black Bull Deep Lounge Sofa',
     nameCn: '大黑牛',
     category: 'sofas',
@@ -165,7 +253,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'taq080-earth-tone-modular-sofa',
-    model: 'TAQ080#',
+    model: 'TA9080#',
     name: 'Earth-Tone Modular Sofa & Ottoman',
     nameCn: '大地色系组合沙发',
     category: 'sofas',
@@ -173,7 +261,7 @@ export const PRODUCTS: Product[] = [
     series: 'High-End Minimalist Series',
     seriesCn: '高端极简系列',
     tagline: 'The Warmth of Home — What we pursue is the perfect combination of function and aesthetics.',
-    taglineCn: '在我们这里，您将会发现家居的魅力远不止于实用性。我们追求的是功能与美学的完美结合。',
+    taglineCn: '在我们这里，您将会发现家居的魅力远不止于实用性。我们追求的是功能与美学的完美结合，致力于为您带来前所未有的居家体验。',
     description: 'Warm tri-color combination featuring khaki-taupe arms, off-white central seating modules, and sage-green accent cushions, complete with a freestanding square ottoman.',
     dimensions: {
       length: '296 cm',
@@ -190,7 +278,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'taq082-blazer-sofa',
-    model: 'TAQ082#',
+    model: 'TA9082#',
     name: 'Blazer Saddle Leather Lounge Sofa',
     nameCn: '布雷泽',
     category: 'sofas',
@@ -213,7 +301,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'taq086-adjustable-headrest-sofa',
-    model: 'TAQ086#',
+    model: 'TA9086#',
     name: 'Contemporary Sofa with Articulating Headrests',
     nameCn: '多档可调头枕沙发',
     category: 'sofas',
@@ -236,7 +324,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'taq090-petrol-blue-sofa',
-    model: 'TAQ090#',
+    model: 'TA9099#',
     name: 'Petrol Slate Curved Arm Sofa',
     nameCn: '蓝灰色弧形扶手沙发',
     category: 'sofas',
@@ -258,15 +346,15 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'taq100-espresso-leather-sofa',
-    model: 'TAQ100#',
+    model: 'TA9100#',
     name: 'Espresso Tailored Leather Sofa',
-    nameCn: '意式浓缩意皮沙发',
+    nameCn: '意式浓缩真皮沙发',
     category: 'sofas',
     categoryLabel: 'Linear Luxury Sofa',
     series: 'Modern Luxury Series',
     seriesCn: '现代豪华系列',
-    tagline: 'Home is the haven of the soul, made of delicate thoughts and warm memories.',
-    taglineCn: '在这个繁忙的世界里，家是您心灵的避风港。一个完美的家是由无数细腻的心思和温馨的记忆交织而成。',
+    tagline: 'Home is the Haven of your soul — made of innumerable delicate thoughts and warm memories.',
+    taglineCn: '在这个繁忙的世界里，家是您心灵的避风港，是我们竭力呵护的圣地。我们深知，一个完美的家是由无数细腻的心思和温馨的记忆交织而成。',
     description: 'Understated Italian-inspired linear silhouette with tapered bronze-black steel legs, deep espresso leather upholstery, and loose bolster cushions.',
     dimensions: {
       length: '314 cm',
@@ -281,14 +369,14 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'taq111-vitality-leather-sofa',
-    model: 'TAQ111#',
+    model: 'TA9111#',
     name: 'Tobacco Modern Dual-Cushion Sofa',
     nameCn: '烟草棕双层座包沙发',
     category: 'sofas',
     categoryLabel: 'Tailored Leather Sofa',
     series: 'Modern Luxury Series',
     seriesCn: '现代豪华系列',
-    tagline: 'Life needs vitality. Everything is designed to make your home more vibrant.',
+    tagline: 'Life needs a little green vitality — let your home become greener and more natural.',
     taglineCn: '生活，需要一点绿色的生机。我们相信，一个绿色的家，可以让您感受大自然的魅力。',
     description: 'Tobacco brown leather sofa featuring double-layered armrest cushions, continuous backrest channel, and low brushed stainless steel base.',
     dimensions: {
@@ -311,8 +399,8 @@ export const PRODUCTS: Product[] = [
     categoryLabel: 'Corner Chaise Sectional',
     series: 'High-End Minimalist Series',
     seriesCn: '高端极简系列',
-    tagline: 'Sunlight filters through the windows, casting dappled shadows across the sofa.',
-    taglineCn: '想象一下，周末的午后，阳光透过窗户，在沙发上投下斑驳的光影。无论是沉浸阅读还是朋友相聚，都充满惬意。',
+    tagline: 'Imagine, on a lazy weekend afternoon, sunlight filters through the windows, casting dappled shadows across the sofa.',
+    taglineCn: '想象一下，周末的午后，阳光透过窗户，在沙发上投下斑驳的光影。无论是沉浸阅读还是朋友相聚，欢声笑语充满整个房间。',
     description: 'Quiet minimalist L-shape chaise sectional in misty sage-grey leather with wide low back cushions and an optional standalone lounge chair.',
     dimensions: {
       length: '290 cm',
@@ -332,7 +420,7 @@ export const PRODUCTS: Product[] = [
   // ==========================================
   {
     id: 'taq102-power-motion-sofa',
-    model: 'TAQ102#',
+    model: 'TA9102#',
     name: 'Power Reclining Leather Sofa',
     nameCn: '电动功能皮沙发',
     category: 'recliners',
@@ -351,12 +439,12 @@ export const PRODUCTS: Product[] = [
     colors: ['Stone Grey', 'Warm Dove'],
     features: ['Electric motorized recline with side push buttons', 'Concealed folding footrests', 'High ergonomic neck support'],
     pageNumber: 18,
-    featured: true,
+    featured: false,
     heroImage: IMAGES.taq102,
   },
   {
     id: 'taq810-dual-recliner-console-sofa',
-    model: 'TAQ810#',
+    model: 'TA9810#',
     name: 'Slate Dual Power Recliner Console Sofa',
     nameCn: '双位功能影院沙发',
     category: 'recliners',
@@ -495,7 +583,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'cabinet-01-no3-sage',
-    model: 'CABINET-01',
+    model: '3号#',
     name: 'Sage & Sintered Stone Two-Drawer Nightstand',
     nameCn: '3号 尤加利绿岩板床头柜',
     category: 'chairs-tables',
@@ -517,7 +605,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'cabinet-02-s56-walnut',
-    model: 'CABINET-02',
+    model: 'S-56#',
     name: 'Walnut & Brass Two-Drawer Nightstand',
     nameCn: 'S-56 胡桃木双抽床头柜',
     category: 'chairs-tables',
@@ -539,7 +627,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'cabinet-03-no4-taupe',
-    model: 'CABINET-03',
+    model: '4号#',
     name: 'Taupe Leatherette Two-Drawer Nightstand',
     nameCn: '4号 软包极简床头柜',
     category: 'chairs-tables',
@@ -824,7 +912,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'taq003-pistachio-sage-bed',
-    model: 'TAQ003#',
+    model: 'TA9003#',
     name: 'Pistachio Sage Soft Curved Bed',
     nameCn: '开心果绿弧形软包床',
     category: 'beds',
@@ -848,7 +936,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'taq004-memory-foam-two-tone-bed',
-    model: 'TAQ004#',
+    model: 'TA9004#',
     name: 'Zero-Pressure Two-Tone Padded Bed',
     nameCn: '零压拼色靠包大床',
     category: 'beds',
@@ -872,7 +960,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'taq007-burnt-orange-leather-bed',
-    model: 'TAQ007#',
+    model: 'TA9007#',
     name: 'Burnt Orange Geometric Headboard Bed',
     nameCn: '焦糖橘菱格纹真皮床',
     category: 'beds',
@@ -895,7 +983,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'taq008-olive-floating-platform-bed',
-    model: 'TAQ008#',
+    model: 'TA9008#',
     name: 'Olive Green Floating Platform Bed',
     nameCn: '橄榄绿轻盈悬浮床',
     category: 'beds',

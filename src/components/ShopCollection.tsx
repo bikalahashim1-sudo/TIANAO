@@ -71,17 +71,17 @@ export const ShopCollection: React.FC<ShopCollectionProps> = ({
         {/* Page Title */}
         <div className="mb-10 text-center sm:text-left">
           <div className="flex flex-wrap items-center gap-2 text-xs font-mono uppercase tracking-widest text-stone-500 mb-2">
-            <span>5GOOD 天奥家具</span>
+            <span className="text-[#005EA8] font-semibold">5GOOD 天奥家具</span>
             <span>·</span>
             <span>36-PAGE OFFICIAL CATALOGUE</span>
             <span>·</span>
-            <span>44 MODELS</span>
+            <span className="tabular-nums">{PRODUCTS.length} VERIFIED MODELS</span>
           </div>
           <h1 className="font-editorial text-4xl sm:text-5xl font-bold text-[#191919]">
             TIANAO Furniture Collection · 天奥家具产品系列
           </h1>
           <p className="text-sm text-stone-600 max-w-2xl mt-2 font-sans leading-relaxed">
-            "坚持简约、时尚、清新、自然的设计理念，紧跟国际时尚潮流，彰显独特的文化魅力。"
+            "坚持简约时尚，清新自然的设计风格，紧跟世界时尚潮流，呈现出与众不同的文化气质。"
             Explore technical specifications, architectural dimensions, materials, and modular designs across Modern Luxury Series (现代豪华系列), High-End Minimalist Series (高端极简系列), and High-End Simple Luxury Series (高端简奢系列).
           </p>
         </div>
@@ -96,7 +96,7 @@ export const ShopCollection: React.FC<ShopCollectionProps> = ({
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search by Model (e.g. TA9105#, TA9820#), name, or material..."
+                placeholder="Search by Model (e.g. TA-M04#, TA-EX01#, TA9106#), name, or material..."
                 className="w-full pl-10 pr-4 py-2.5 text-xs border border-stone-200 focus:border-black focus:outline-hidden bg-stone-50/50"
               />
               {searchQuery && (

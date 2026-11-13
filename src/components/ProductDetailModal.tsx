@@ -129,7 +129,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
 
               {/* Tagline / Catalogue Quote */}
               {product.tagline && (
-                <div className="mb-5 p-3.5 bg-[#F5F4F0] border-l-2 border-stone-800 text-xs italic text-stone-700 leading-relaxed">
+                <div className="mb-5 p-3.5 bg-[#F5F4F0] border border-[#E8E6E1] text-xs italic text-stone-700 leading-relaxed">
                   "{product.tagline}"
                   {product.taglineCn && (
                     <p className="not-italic text-[11px] text-stone-500 mt-1 font-sans">{product.taglineCn}</p>

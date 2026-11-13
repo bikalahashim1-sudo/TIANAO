@@ -69,22 +69,22 @@ export const AboutSection: React.FC = () => {
             {/* Box 1: Verbatim Chinese Text from Document Page 2 */}
             <div className="p-6 sm:p-8 bg-white border border-[#E8E6E1] shadow-2xs space-y-4">
               <div className="flex items-center justify-between border-b border-stone-100 pb-3">
-                <div className="flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 bg-amber-500 rounded-full" />
-                  <h3 className="font-editorial text-2xl font-bold text-stone-900">
-                    企业简介
-                  </h3>
-                </div>
-                <span className="text-[11px] font-mono text-stone-500 uppercase tracking-wider">
-                  CATALOGUE PAGE 02 · 官方原文
+                <h3 className="font-editorial text-2xl font-bold text-stone-900">
+                  关于天奥企业 · 企业简介
+                </h3>
+                <span className="text-[11px] font-mono text-[#005EA8] uppercase tracking-wider font-semibold">
+                  CATALOGUE PAGE 01
                 </span>
               </div>
               <p className="text-base text-stone-800 leading-relaxed font-sans font-medium">
-                天奥家具制造有限公司是一家集研发、设计、生产、销售为一体的大中型现代软体家具制造企业。由乌干达天唐集团与中国杭州奥默家具于2024年7月合资成立，位于中乌姆巴莱工业园，目前占地厂房面积20,000平方米，展厅面积1,000平方米，员工100余人。公司拥有先进的生产设备和工艺技术，采用优质原材料，生产高品质的软体家具产品，成为东非区域行业的佼佼者。
+                {COMPANY_INFO.profileCn}
               </p>
-              <div className="p-4 bg-[#F5F4F0] border-l-3 border-stone-900 space-y-1">
+              <div className="p-4 bg-[#F5F4F0] border border-[#E8E6E1] space-y-1">
+                <p className="text-xs font-mono text-[#005EA8] uppercase tracking-wider font-semibold">
+                  公司现有产品系列
+                </p>
                 <p className="text-sm font-semibold text-stone-900 leading-relaxed">
-                  坚持简约、时尚、清新、自然的设计理念，紧跟国际时尚潮流，彰显独特的文化魅力。未来，天奥家具将继续秉承“创新、卓越、共赢”的企业精神。
+                  现代豪华系列 · 高端极简系列 · 高端简奢系列
                 </p>
               </div>
             </div>
@@ -92,21 +92,21 @@ export const AboutSection: React.FC = () => {
             {/* Box 2: Verbatim English Text from Document Page 2 */}
             <div className="p-6 sm:p-8 bg-white border border-[#E8E6E1] shadow-2xs space-y-4">
               <div className="flex items-center justify-between border-b border-stone-100 pb-3">
-                <div className="flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 bg-stone-900 rounded-full" />
-                  <h3 className="font-editorial text-2xl font-bold text-stone-900">
-                    Company Profile
-                  </h3>
-                </div>
-                <span className="text-[11px] font-mono text-stone-500 uppercase tracking-wider">
-                  OFFICIAL ENGLISH VERSION
+                <h3 className="font-editorial text-2xl font-bold text-stone-900">
+                  Company Profile
+                </h3>
+                <span className="text-[11px] font-mono text-[#005EA8] uppercase tracking-wider font-semibold">
+                  CATALOGUE PAGE 02
                 </span>
               </div>
               <p className="text-sm text-stone-700 leading-relaxed font-sans">
-                TIANAO Furniture Co., Ltd. is a medium-to-large modern upholstered furniture manufacturing enterprise integrating R&D, design, production, and sales. Established in July 2024 through a partnership between <strong>Uganda Tiantang Group</strong> and <strong>Hangzhou Aumere Furniture</strong> from China, located in Sino-Uganda Mbale Industrial Park, currently covering a factory area of 20,000 square meters and a showroom area of 1,000 square meters, with over 100 employees. The company boasts advanced production equipment and technology, utilizing high-quality raw materials to produce top-notch upholstered products, making it a leader in the East African regional and global industry.
+                {COMPANY_INFO.profileEn}
               </p>
-              <div className="p-4 bg-stone-50 border-l-3 border-amber-600 text-xs text-stone-700 italic leading-relaxed">
-                "We adhere to a simple, fashionable, fresh, and natural design philosophy that follows global fashion trends while showcasing a unique cultural charm. In the future, TIANAO Furniture will continue to embrace the corporate spirit of 'Innovation, Excellence, and Win-Win'."
+              <div className="p-4 bg-[#005EA8]/5 border border-[#005EA8]/20 text-xs text-stone-700 leading-relaxed">
+                <span className="font-mono font-semibold text-[#005EA8] block mb-1 uppercase tracking-wider">
+                  Current Product Series
+                </span>
+                <span>Modern Luxury Series · High-End Minimalist Series · High-End Simple Luxury Series</span>
               </div>
             </div>
           </div>
@@ -115,8 +115,8 @@ export const AboutSection: React.FC = () => {
         {/* The 5 Excellence Strategy (Direct from PDF Page 2) */}
         <div className="pt-12 border-t border-[#E8E6E1]">
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <span className="text-xs font-mono uppercase tracking-widest text-amber-700 font-semibold block mb-1">
-              THE 5GOOD PILLARS · 5大发展战略
+            <span className="text-xs font-mono uppercase tracking-widest text-[#005EA8] font-semibold block mb-1">
+              THE 5GOOD PILLARS · 5好发展战略
             </span>
             <h3 className="font-editorial text-3xl font-bold text-stone-900">
               The Five Excellence Development Strategy

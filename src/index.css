@@ -10,6 +10,9 @@
   --color-charcoal-card: #1D1C1A;
   --color-wood-tan: #8C6A49;
   --color-wood-gold: #C29B38;
+  --color-tianao-blue: #005EA8;
+  --color-tianao-blue-dark: #00457C;
+  --color-tianao-yellow: #F7D117;
 }
 
 html {
@@ -27,6 +30,32 @@ h1, h2, h3, .font-editorial {
   font-family: var(--font-serif);
 }
 
+@keyframes tianao-marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-tianao-marquee {
+  display: flex;
+  width: max-content;
+  animation: tianao-marquee 42s linear infinite;
+  will-change: transform;
+}
+
+.marquee-wrapper:hover .animate-tianao-marquee {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-tianao-marquee {
+    animation: none;
+  }
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
@@ -42,4 +71,3 @@ h1, h2, h3, .font-editorial {
 ::-webkit-scrollbar-thumb:hover {
   background: #A6A092;
 }
-

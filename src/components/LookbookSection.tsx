@@ -53,8 +53,8 @@ export const LookbookSection: React.FC<LookbookSectionProps> = ({ onSelectProduc
 
             <div className="p-8 relative z-10 flex flex-col justify-between flex-1">
               <div>
-                <div className="flex items-center gap-2 text-xs font-mono text-amber-400 mb-2">
-                  <span>MODEL TAQ078#</span>
+                <div className="flex items-center gap-2 text-xs font-mono text-[#F7D117] mb-2">
+                  <span>MODEL TA9078#</span>
                   <span>·</span>
                   <span>BIG BLACK BULL DEEP LOUNGE SOFA</span>
                 </div>
@@ -62,13 +62,13 @@ export const LookbookSection: React.FC<LookbookSectionProps> = ({ onSelectProduc
                   Grand Executive Comfort
                 </h3>
                 <p className="text-xs text-stone-300 font-serif italic max-w-xl leading-relaxed">
-                  "They are not just cold goods, but works of art that resonate with you — substantial 388cm continuous presence with deep horizontal seating."
+                  "Into our home world, you will find that every piece of furniture, every decoration has been given life and story. They are not just cold goods, but works of art that resonate with you."
                 </p>
               </div>
 
               <div className="pt-6 border-t border-stone-800 flex items-center justify-between text-xs font-mono text-stone-400">
                 <span>388 cm × 122 cm · Obsidian Full-Grain Cowhide</span>
-                <span className="flex items-center gap-1 text-white group-hover:text-amber-400 transition-colors">
+                <span className="flex items-center gap-1 text-white group-hover:text-[#F7D117] transition-colors">
                   Inspect Model <ArrowUpRight className="w-3.5 h-3.5" />
                 </span>
               </div>
@@ -92,7 +92,7 @@ export const LookbookSection: React.FC<LookbookSectionProps> = ({ onSelectProduc
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1D1C1A] via-transparent to-transparent opacity-70" />
               </div>
               <div className="p-6">
-                <div className="flex items-center gap-2 text-xs font-mono text-amber-400 mb-1">
+                <div className="flex items-center gap-2 text-xs font-mono text-[#F7D117] mb-1">
                   <span>MODEL TAA2188#</span>
                   <span>·</span>
                   <span>MASTER BEDROOM SUITE</span>
@@ -110,7 +110,7 @@ export const LookbookSection: React.FC<LookbookSectionProps> = ({ onSelectProduc
               </div>
             </div>
 
-            {/* Cinema Recliner Card: TAQ810 Dual Recliner Console Sofa */}
+            {/* Cinema Recliner Card: TA9810 Dual Recliner Console Sofa */}
             <div
               onClick={() => onSelectProductById('taq810-dual-recliner-console-sofa')}
               className="group relative bg-[#1D1C1A] border border-stone-800 overflow-hidden cursor-pointer flex-1 flex flex-col justify-between"
@@ -118,15 +118,15 @@ export const LookbookSection: React.FC<LookbookSectionProps> = ({ onSelectProduc
               <div className="relative aspect-[16/9] overflow-hidden">
                 <img
                   src={IMAGES.taq810}
-                  alt="TAQ810 Dual Power Recliner Console Sofa"
+                  alt="TA9810 Dual Power Recliner Console Sofa"
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1D1C1A] via-transparent to-transparent opacity-70" />
               </div>
               <div className="p-6">
-                <div className="flex items-center gap-2 text-xs font-mono text-amber-400 mb-1">
-                  <span>MODEL TAQ810#</span>
+                <div className="flex items-center gap-2 text-xs font-mono text-[#F7D117] mb-1">
+                  <span>MODEL TA9810#</span>
                   <span>·</span>
                   <span>SMART POWER MOTION</span>
                 </div>

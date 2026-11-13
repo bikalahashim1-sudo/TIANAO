@@ -2,6 +2,12 @@ import heroLiving from './images/hero_tianao_living_1791124221247.jpg';
 import factoryFacility from './images/Mbale Industrial Park.jpg';
 import brandLogo from './images/logo.jpeg';
 
+// Newly added signature residential & executive showcase photography
+import imgExecutiveSuite1 from './images/1.jpeg';
+import imgBoucleChairAngle from './images/2.jpeg';
+import imgBoucleChairFront from './images/3.jpeg';
+import imgBoucleSofaRoom from './images/4.jpeg';
+
 // Imported directly from src/assets/images using actual file names
 import img9806 from './images/9806__IMG_2926_1 拷贝.jpg';
 import img9807 from './images/9807__IMG_3070_1 拷贝.jpg';
@@ -52,6 +58,12 @@ export const IMAGES = {
   factoryFacility,
   brandLogo,
   logo: brandLogo,
+
+  // Uploaded Collection Photography (1.jpeg - 4.jpeg)
+  executiveSuite1: imgExecutiveSuite1,
+  boucleChairAngle: imgBoucleChairAngle,
+  boucleChairFront: imgBoucleChairFront,
+  boucleSofaRoom: imgBoucleSofaRoom,
 
   // Living Room Sofas
   taq106: imgTAQ106,

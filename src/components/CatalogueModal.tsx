@@ -39,25 +39,35 @@ export const CatalogueModal: React.FC<CatalogueModalProps> = ({
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/80 backdrop-blur-sm animate-in fade-in duration-200">
       <div className="relative w-full max-w-4xl bg-[#FBFBFA] border border-[#E8E6E1] shadow-2xl flex flex-col max-h-[90vh] overflow-hidden">
         {/* Header */}
-        <div className="px-6 py-4 border-b border-[#E8E6E1] bg-white flex items-center justify-between">
+        <div className="px-6 py-4 border-b border-[#E8E6E1] bg-white flex items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <FileText className="w-5 h-5 text-amber-600" />
+            <FileText className="w-5 h-5 text-[#005EA8]" />
             <div>
               <h2 className="font-editorial text-xl font-bold text-stone-900 leading-none">
                 TIANAO Furniture Official Catalogue
               </h2>
               <span className="text-[11px] font-mono text-stone-500 uppercase tracking-wider">
-                36 Pages · July 2024 Edition · Sino-Uganda Mbale
+                36 Pages · Sino-Uganda Mbale Industrial Park
               </span>
             </div>
           </div>
-          <button
-            onClick={onClose}
-            className="p-2 text-stone-500 hover:text-black transition-colors cursor-pointer"
-            aria-label="Close catalogue viewer"
-          >
-            <X className="w-5 h-5" />
-          </button>
+          <div className="flex items-center gap-3">
+            <a
+              href={COMPANY_INFO.pdfPath}
+              download="TIANAO-Furniture-Official-Catalogue.pdf"
+              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#005EA8] hover:bg-[#00457C] text-white text-xs font-semibold uppercase tracking-wider transition-colors whitespace-nowrap"
+            >
+              <Download className="w-3.5 h-3.5" />
+              <span>Download PDF</span>
+            </a>
+            <button
+              onClick={onClose}
+              className="p-2 text-stone-500 hover:text-black transition-colors cursor-pointer"
+              aria-label="Close catalogue viewer"
+            >
+              <X className="w-5 h-5" />
+            </button>
+          </div>
         </div>
 
         {/* Page Content & Viewer */}
@@ -109,36 +119,28 @@ export const CatalogueModal: React.FC<CatalogueModalProps> = ({
                 <div className="space-y-4 text-xs text-stone-700 leading-relaxed font-sans">
                   {/* Chinese Original from PDF Page 2 */}
                   <div className="p-4 bg-stone-50 border border-stone-200 space-y-2">
-                    <p className="font-bold text-stone-900 text-sm flex items-center gap-2">
-                      <span className="w-2 h-2 bg-amber-600 rounded-full" />
-                      <span>企业简介</span>
+                    <p className="font-bold text-stone-900 text-sm">
+                      关于天奥企业 · 企业简介
                     </p>
                     <p className="text-stone-800 leading-relaxed font-medium">
-                      天奥家具制造有限公司是一家集研发、设计、生产、销售为一体的大中型现代软体家具制造企业。由乌干达天唐集团与中国杭州奥默家具于2024年7月合资成立，位于中乌姆巴莱工业园，目前占地厂房面积20,000平方米，展厅面积1,000平方米，员工100余人。公司拥有先进的生产设备和工艺技术，采用优质原材料，生产高品质的软体家具产品，成为东非区域行业的佼佼者。
-                    </p>
-                    <p className="text-stone-700 text-[11px] leading-relaxed italic border-t border-stone-200 pt-2">
-                      “坚持简约、时尚、清新、自然的设计理念，紧跟国际时尚潮流，彰显独特的文化魅力。未来，天奥家具将继续秉承‘创新、卓越、共赢’的企业精神。”
+                      {COMPANY_INFO.profileCn}
                     </p>
                   </div>
 
                   {/* English Translation from PDF Page 2 */}
                   <div className="p-4 bg-white border border-stone-200 space-y-2">
-                    <p className="font-bold text-stone-900 text-sm flex items-center gap-2">
-                      <span className="w-2 h-2 bg-stone-800 rounded-full" />
-                      <span>Company Profile</span>
+                    <p className="font-bold text-stone-900 text-sm">
+                      Company Profile
                     </p>
                     <p className="text-stone-700 leading-relaxed">
-                      TIANAO Furniture Co., Ltd. is a medium-to-large modern upholstered furniture manufacturing enterprise integrating R&D, design, production, and sales. Established in July 2024 through a partnership between <strong>Uganda Tiantang Group</strong> and <strong>Hangzhou Aumere Furniture</strong> from China, located in Sino-Uganda Mbale Industrial Park, currently covering a factory area of 20,000 square meters and a showroom area of 1,000 square meters, with over 100 employees. The company boasts advanced production equipment and technology, utilizing high-quality raw materials to produce top-notch upholstered products, making it a leader in the East African regional and global industry.
-                    </p>
-                    <p className="text-stone-600 text-[11px] leading-relaxed italic border-t border-stone-100 pt-2">
-                      "We adhere to a simple, fashionable, fresh, and natural design philosophy that follows global fashion trends while showcasing a unique cultural charm. In the future, TIANAO Furniture will continue to embrace the corporate spirit of 'Innovation, Excellence, and Win-Win'."
+                      {COMPANY_INFO.profileEn}
                     </p>
                   </div>
 
                   {/* 5GOOD Strategy */}
-                  <div className="bg-amber-50/80 p-3.5 border border-amber-200 text-xs">
-                    <p className="font-bold text-stone-900 text-[11px] mb-1 uppercase tracking-wider">
-                      Five Excellence Development Strategy (5大发展战略 / 5GOOD):
+                  <div className="bg-[#005EA8]/5 p-3.5 border border-[#005EA8]/20 text-xs">
+                    <p className="font-bold text-[#005EA8] text-[11px] mb-1 uppercase tracking-wider">
+                      Five Excellence Development Strategy (5好发展战略 / 5GOOD):
                     </p>
                     <p className="text-stone-800 font-mono text-[11px]">
                       好健康 (Good Health) · 好舒适 (Good Comfort) · 好设计 (Good Design) · 好品质 (Good Quality) · 好服务 (Good Service)

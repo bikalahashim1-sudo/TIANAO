@@ -98,11 +98,14 @@ export default function App() {
           <>
             <Hero
               onExplore={() => {
+                setSelectedCategory('all');
                 setActiveView('collection');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
               onRequestQuote={() => setIsQuoteDrawerOpen(true)}
               onOpenCatalogue={() => setIsCatalogueModalOpen(true)}
+              onSelectCategory={handleSelectCategoryFromHome}
+              onSelectProductById={handleSelectProductById}
             />
 
             <FeaturedSection
