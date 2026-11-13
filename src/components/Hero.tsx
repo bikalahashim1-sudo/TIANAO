@@ -31,7 +31,7 @@ const HERO_SLIDE_MEDIA: HeroSlideMedia[] = [
     id: 'slide-1-executive',
     image: IMAGES.executiveSuite1,
     imageAlt: 'TIANAO Espresso Leather 1+1+3 Executive and Lounge Sofa Suite',
-    badgeModel: 'TA-EX01#',
+    badgeModel: 'TA-EX01',
     framing: 'room',
     productId: 'ta-executive-reception-suite',
   },
@@ -39,7 +39,7 @@ const HERO_SLIDE_MEDIA: HeroSlideMedia[] = [
     id: 'slide-2-boucle-chair-angle',
     image: IMAGES.boucleChairAngle,
     imageAlt: 'TIANAO Sculpted Walnut and Ivory Boucle Lounge Armchair Angle View',
-    badgeModel: 'TA-M02#',
+    badgeModel: 'TA-M02',
     framing: 'studio',
     productId: 'ta-minimalist-walnut-boucle-chair',
   },
@@ -47,7 +47,7 @@ const HERO_SLIDE_MEDIA: HeroSlideMedia[] = [
     id: 'slide-3-boucle-chair-front',
     image: IMAGES.boucleChairFront,
     imageAlt: 'TIANAO Sculpted Walnut and Ivory Boucle Lounge Armchair Front View',
-    badgeModel: 'TA-M02#',
+    badgeModel: 'TA-M02',
     framing: 'studio',
     productId: 'ta-minimalist-walnut-boucle-chair',
   },
@@ -55,7 +55,7 @@ const HERO_SLIDE_MEDIA: HeroSlideMedia[] = [
     id: 'slide-4-boucle-sofa',
     image: IMAGES.boucleSofaRoom,
     imageAlt: 'TIANAO Sculpted Walnut and Ivory Boucle 3-Seater Sofa in living room',
-    badgeModel: 'TA-M04#',
+    badgeModel: 'TA-M04',
     framing: 'room',
     productId: 'ta-minimalist-walnut-boucle-sofa',
   },
@@ -92,7 +92,7 @@ export const Hero: React.FC<HeroProps> = ({
         {/* Carousel Viewport (dir="ltr" keeps horizontal track translation intact in both LTR and RTL modes) */}
         <div
           dir="ltr"
-          className="order-1 lg:col-span-7 relative w-full h-[280px] sm:h-[440px] lg:h-[580px] xl:h-[620px] bg-[#F7F6F2] overflow-hidden"
+          className="order-1 lg:col-span-7 relative w-full h-[280px] sm:h-[420px] lg:h-[540px] xl:h-[570px] bg-[#F7F6F2] overflow-hidden"
         >
           {/* Horizontal Sliding Track */}
           <div
@@ -178,7 +178,7 @@ export const Hero: React.FC<HeroProps> = ({
         </div>
 
         {/* Right Editorial Copy Panel */}
-        <div className="order-2 lg:col-span-5 bg-[#F7F6F2] flex flex-col justify-between px-4 sm:px-8 lg:ps-8 lg:pe-[max(2rem,calc((100vw-80rem)/2+2rem))] py-8 sm:py-12">
+        <div className="order-2 lg:col-span-5 bg-[#F7F6F2] flex flex-col justify-between px-4 sm:px-8 lg:ps-8 lg:pe-[max(2rem,calc((100vw-80rem)/2+2rem))] py-7 sm:py-9">
           <div className="space-y-4">
             <div className="flex items-center justify-between gap-3">
               <span className="text-sm tracking-widest uppercase text-[#005EA8] font-bold">
@@ -250,7 +250,7 @@ export const Hero: React.FC<HeroProps> = ({
           </div>
 
           {/* Slide Navigation Dots & Playback Control */}
-          <div className="pt-8 mt-6 border-t border-[#E8E6E1] flex items-center justify-between gap-4">
+          <div className="pt-5 mt-5 border-t border-[#E8E6E1] flex items-center justify-between gap-4">
             <div className="flex items-center gap-2 min-w-0">
               {HERO_SLIDE_MEDIA.map((s, idx) => (
                 <button
@@ -279,8 +279,36 @@ export const Hero: React.FC<HeroProps> = ({
         </div>
       </div>
 
-      {/* Full-Width 4-Column Proof Metrics Ribbon Below Hero */}
-      <div className="w-full bg-[#FBFBFA] border-t border-[#E8E6E1]">
+      {/* Words Running Dynamically Right-to-Left Right Below the Hero Section */}
+      <div
+        dir="ltr"
+        className="marquee-wrapper bg-[#005EA8] text-white border-y border-[#F7D117]/40 py-3.5 overflow-hidden select-none"
+        aria-label={t.hero.marquee}
+      >
+        <div className="animate-tianao-marquee flex items-center">
+          {[0, 1].map((dupIndex) => (
+            <div key={dupIndex} className="flex items-center shrink-0">
+              {[0, 1, 2].map((idx) => (
+                <div key={`${dupIndex}-${idx}`} className="flex items-center shrink-0">
+                  <span
+                    dir={dir}
+                    className="text-sm sm:text-base font-semibold tracking-wide px-6 whitespace-nowrap"
+                  >
+                    {t.hero.marquee}
+                  </span>
+                  <span
+                    className="w-2 h-2 bg-[#F7D117] rotate-45 inline-block shrink-0"
+                    aria-hidden="true"
+                  />
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Full-Width 4-Column Proof Metrics Ribbon */}
+      <div className="w-full bg-[#FBFBFA] border-b border-[#E8E6E1]">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 py-6 grid grid-cols-2 sm:grid-cols-4 gap-6 text-stone-800">
           <div>
             <span className="tabular-nums text-2xl sm:text-3xl font-bold text-[#191919] block">
@@ -314,34 +342,6 @@ export const Hero: React.FC<HeroProps> = ({
               {t.hero.metrics.fiveGoodLabel}
             </span>
           </div>
-        </div>
-      </div>
-
-      {/* Words Running Dynamically Right-to-Left Below the Hero Section */}
-      <div
-        dir="ltr"
-        className="marquee-wrapper bg-[#005EA8] text-white border-y border-[#F7D117]/40 py-3.5 overflow-hidden select-none"
-        aria-label={t.hero.marquee}
-      >
-        <div className="animate-tianao-marquee flex items-center">
-          {[0, 1].map((dupIndex) => (
-            <div key={dupIndex} className="flex items-center shrink-0">
-              {[0, 1, 2].map((idx) => (
-                <div key={`${dupIndex}-${idx}`} className="flex items-center shrink-0">
-                  <span
-                    dir={dir}
-                    className="text-sm sm:text-base font-semibold tracking-wide px-6 whitespace-nowrap"
-                  >
-                    {t.hero.marquee}
-                  </span>
-                  <span
-                    className="w-2 h-2 bg-[#F7D117] rotate-45 inline-block shrink-0"
-                    aria-hidden="true"
-                  />
-                </div>
-              ))}
-            </div>
-          ))}
         </div>
       </div>
     </section>

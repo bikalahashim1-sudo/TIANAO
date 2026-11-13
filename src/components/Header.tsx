@@ -71,24 +71,28 @@ export const Header: React.FC<HeaderProps> = ({
       </div>
 
       {/* Main Navigation Bar */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 h-18 sm:h-22 flex items-center justify-between gap-4 sm:gap-6">
+      <div className="max-w-7xl mx-auto px-3 sm:px-8 h-16 sm:h-22 flex items-center justify-between gap-2 sm:gap-6">
         {/* Zone 1: Brand Wordmark & Emblem */}
         <button
           type="button"
           onClick={() => handleNavClick('home')}
-          className="flex items-center gap-2.5 sm:gap-3 cursor-pointer group min-w-0 shrink text-start"
+          className="flex items-center gap-2 sm:gap-3 cursor-pointer group min-w-0 shrink text-start"
         >
-          <div className="h-10 sm:h-13 w-auto flex-shrink-0 flex items-center justify-center rounded-xs border border-stone-200/90 bg-white px-1.5 sm:px-2 py-1 shadow-xs transition-transform duration-200 group-hover:scale-105">
+          <div className="h-9 sm:h-13 w-auto flex-shrink-0 flex items-center justify-center rounded-xs border border-stone-200/90 bg-white px-1 sm:px-2 py-1 shadow-xs transition-transform duration-200 group-hover:scale-105">
             <img
               src={IMAGES.brandLogo}
               alt="TIANAO Furniture Logo"
-              className="h-full w-auto max-h-8 sm:max-h-11 object-contain"
+              className="h-full w-auto max-h-7 sm:max-h-11 object-contain"
             />
           </div>
 
           <div className="flex flex-col min-w-0">
-            <span className="font-editorial text-lg sm:text-2xl font-bold tracking-tight text-[#191919] uppercase leading-none group-hover:text-[#005EA8] transition-colors truncate">
-              {t.brandTitle}
+            <span
+              dir="ltr"
+              className="font-editorial text-[14px] sm:text-2xl font-bold tracking-tight text-[#191919] uppercase leading-none group-hover:text-[#005EA8] transition-colors inline-flex items-baseline gap-1 sm:gap-1.5 whitespace-nowrap"
+            >
+              <span>TIANAO</span>
+              <span lang="zh" className="font-semibold">天奥家具</span>
             </span>
             <span className="hidden sm:block text-xs tracking-[0.14em] text-stone-700 font-sans uppercase font-semibold mt-1 truncate">
               {t.brandSubtitle}

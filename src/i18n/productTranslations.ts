@@ -39,7 +39,7 @@ export const PRODUCT_AR_TRANSLATIONS: Record<string, ProductLocaleCopy> = {
     categoryLabel: 'أريكة معيشة بسيطة',
     tagline: 'إنشاء بيئة منزلية مثالية لا يعني بالضرورة التكلف والتعقيد.',
     description: 'أريكة بثلاثة مقاعد بذراعين منحنيتين بخطوط عضوية أنيقة، منجدة بقماش بوكليه عاجي مسامي ومثبتة بأرجل زاوية منحوتة من خشب الجوز الصلب.',
-    matchingItems: 'تنسجم مع كرسي الصالة المنفرد (TA-M02#)',
+    matchingItems: 'تنسجم مع كرسي الصالة المنفرد (TA-M02)',
   },
   'ta-executive-reception-suite': {
     name: 'طقم أريكة تنفيذية ومنزلية 1+1+3 جلد إسبريسو',
@@ -53,7 +53,7 @@ export const PRODUCT_AR_TRANSLATIONS: Record<string, ProductLocaleCopy> = {
     categoryLabel: 'كرسي صالة مصمم',
     tagline: 'بسيط، أنيق، منعش وطبيعي — ملاذ هادئ للراحة وتجديد النشاط.',
     description: 'كرسي استرخاء مفرد عميق يجمع بين التنجيد الدائري بقماش البوكليه ودعامات زاوية من خشب الجوز الصلب مع وسادة ظهر مريحة.',
-    matchingItems: 'تتوفر أريكة 3 مقاعد مطابقة (TA-M04#)',
+    matchingItems: 'تتوفر أريكة 3 مقاعد مطابقة (TA-M04)',
   },
   'taq106-sugar-cube-sofa': {
     name: 'أريكة وصالة مكعب السكر المعيارية',
@@ -74,7 +74,7 @@ export const PRODUCT_AR_TRANSLATIONS: Record<string, ProductLocaleCopy> = {
     description: 'أريكة مميزة بتطريزها العمودي الإيقاعي المستوحى من مفاتيح البيانو، مزودة بوحدة تخزين جانبية مدمجة ومساند قطنية مريحة.',
   },
   'taq078-big-black-bull-sofa': {
-    name: 'أريكة الاسترخاء العميقة الفاخرة (TA9078#)',
+    name: 'أريكة الاسترخاء العميقة الفاخرة (TA9078)',
     categoryLabel: 'أريكة تنفيذية كبيرة',
     tagline: 'ليست مجرد قطع أثاث، بل أعمال فنية تنسجم مع أسلوب حياتك.',
     description: 'أريكة جلدية فاخرة بطول 3.88 متر بتصميم منخفض ومريح مع وسائد جانبية عريضة ومقاعد أفقية عميقة.',
@@ -245,7 +245,7 @@ export const PRODUCT_AR_TRANSLATIONS: Record<string, ProductLocaleCopy> = {
     name: 'سرير جلدي مطرّز بأجنحة عالية كبيرة',
     categoryLabel: 'سرير مجنّح فخم',
     tagline: 'حضور ملكي في الجناح الرئيسي مع تطريز شبكي متقن.',
-    description: 'سرير كبير بمسند رأس مجنّح بعرض 238 سم وتطريز شبكي أنيق مع طاولات جانبية K21# متناسقة.',
+    description: 'سرير كبير بمسند رأس مجنّح بعرض 238 سم وتطريز شبكي أنيق مع طاولات جانبية K21 متناسقة.',
   },
   'taq003-pistachio-sage-bed': {
     name: 'سرير منحنٍ ناعم بلون فستقي هادئ',

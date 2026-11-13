@@ -71,7 +71,7 @@ export const PRODUCTS: Product[] = [
   // ==========================================
   {
     id: 'ta-minimalist-walnut-boucle-sofa',
-    model: 'TA-M04#',
+    model: 'TA-M04',
     name: 'Sculpted Walnut & Ivory Bouclé 3-Seater Sofa',
     nameCn: '胡桃木极简羊羔绒沙发',
     category: 'sofas',
@@ -85,9 +85,9 @@ export const PRODUCTS: Product[] = [
       length: '240 cm',
       depth: '98 cm',
       height: '78 cm',
-      breakdown: 'Matching Single Lounge Armchair (TA-M02#) available'
+      breakdown: 'Matching Single Lounge Armchair (TA-M02) available'
     },
-    matchingItems: 'Pairs with Sculpted Walnut & Ivory Bouclé Lounge Armchair (TA-M02#)',
+    matchingItems: 'Pairs with Sculpted Walnut & Ivory Bouclé Lounge Armchair (TA-M02)',
     materials: ['Textured Ivory Bouclé Fabric', 'Sculpted Solid Walnut Wood Legs', 'High-Density Rebound Sponge'],
     colors: ['Warm Ivory Bouclé & Walnut', 'Oatmeal Cream'],
     features: ['Sculpted solid walnut wrap-around corner legs', 'Plush loose feather-touch back pillows', 'Breathable textured bouclé upholstery'],
@@ -98,7 +98,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'ta-executive-reception-suite',
-    model: 'TA-EX01#',
+    model: 'TA-EX01',
     name: 'Espresso Executive & Lounge 1+1+3 Sofa Suite',
     nameCn: '尊享商务会客真皮沙发组合',
     category: 'sofas',
@@ -124,7 +124,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'ta-minimalist-walnut-boucle-chair',
-    model: 'TA-M02#',
+    model: 'TA-M02',
     name: 'Sculpted Walnut & Ivory Bouclé Lounge Armchair',
     nameCn: '胡桃木角柱羊羔绒单人椅',
     category: 'chairs-tables',
@@ -139,7 +139,7 @@ export const PRODUCTS: Product[] = [
       width: '94 cm',
       height: '78 cm'
     },
-    matchingItems: 'Matching 3-Seater Sofa (TA-M04#) available',
+    matchingItems: 'Matching 3-Seater Sofa (TA-M04) available',
     materials: ['Textured Ivory Bouclé Fabric', 'Solid Walnut Sculpted Base', 'High-Resilience Molded Sponge'],
     colors: ['Warm Ivory Bouclé & Walnut'],
     features: ['Signature triangular walnut corner legs', 'Deep pocketed seat cushion', 'Coordinating loose square back cushion'],
@@ -153,7 +153,7 @@ export const PRODUCTS: Product[] = [
   // ==========================================
   {
     id: 'taq106-sugar-cube-sofa',
-    model: 'TA9106#',
+    model: 'TA9106',
     name: 'Sugar Cube Sectional & Lounge Sofa',
     nameCn: '方糖沙发',
     category: 'sofas',
@@ -178,7 +178,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'taq070-olive-modular-sofa',
-    model: 'TA9092#',
+    model: 'TA9092',
     name: 'Olive Minimalist Low-Profile Sofa',
     nameCn: '橄榄绿极简低矮沙发',
     category: 'sofas',
@@ -203,7 +203,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'taq103-piano-key-sofa',
-    model: 'TA9070#',
+    model: 'TA9070',
     name: 'Piano Key Sectional Sofa',
     nameCn: '钢琴键',
     category: 'sofas',
@@ -228,7 +228,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'taq078-big-black-bull-sofa',
-    model: 'TA9078#',
+    model: 'TA9078',
     name: 'Big Black Bull Deep Lounge Sofa',
     nameCn: '大黑牛',
     category: 'sofas',
@@ -253,7 +253,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'taq080-earth-tone-modular-sofa',
-    model: 'TA9080#',
+    model: 'TA9080',
     name: 'Earth-Tone Modular Sofa & Ottoman',
     nameCn: '大地色系组合沙发',
     category: 'sofas',
@@ -278,7 +278,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'taq082-blazer-sofa',
-    model: 'TA9082#',
+    model: 'TA9082',
     name: 'Blazer Saddle Leather Lounge Sofa',
     nameCn: '布雷泽',
     category: 'sofas',
@@ -301,7 +301,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'taq086-adjustable-headrest-sofa',
-    model: 'TA9086#',
+    model: 'TA9086',
     name: 'Contemporary Sofa with Articulating Headrests',
     nameCn: '多档可调头枕沙发',
     category: 'sofas',
@@ -324,7 +324,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'taq090-petrol-blue-sofa',
-    model: 'TA9099#',
+    model: 'TA9099',
     name: 'Petrol Slate Curved Arm Sofa',
     nameCn: '蓝灰色弧形扶手沙发',
     category: 'sofas',
@@ -346,7 +346,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'taq100-espresso-leather-sofa',
-    model: 'TA9100#',
+    model: 'TA9100',
     name: 'Espresso Tailored Leather Sofa',
     nameCn: '意式浓缩真皮沙发',
     category: 'sofas',
@@ -369,7 +369,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'taq111-vitality-leather-sofa',
-    model: 'TA9111#',
+    model: 'TA9111',
     name: 'Tobacco Modern Dual-Cushion Sofa',
     nameCn: '烟草棕双层座包沙发',
     category: 'sofas',
@@ -392,7 +392,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'ta9801-corner-chaise-sectional',
-    model: 'TA9801#',
+    model: 'TA9801',
     name: 'Minimalist Corner Chaise Sofa & Armchair',
     nameCn: '极简转角贵妃沙发',
     category: 'sofas',
@@ -420,7 +420,7 @@ export const PRODUCTS: Product[] = [
   // ==========================================
   {
     id: 'taq102-power-motion-sofa',
-    model: 'TA9102#',
+    model: 'TA9102',
     name: 'Power Reclining Leather Sofa',
     nameCn: '电动功能皮沙发',
     category: 'recliners',
@@ -444,7 +444,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'taq810-dual-recliner-console-sofa',
-    model: 'TA9810#',
+    model: 'TA9810',
     name: 'Slate Dual Power Recliner Console Sofa',
     nameCn: '双位功能影院沙发',
     category: 'recliners',
@@ -471,7 +471,7 @@ export const PRODUCTS: Product[] = [
   // ==========================================
   {
     id: 'chair-9808-swivel',
-    model: '9808#',
+    model: '9808',
     name: 'Moss Green Swivel Lounge Chair',
     nameCn: '苔藓绿旋转单椅',
     category: 'chairs-tables',
@@ -494,7 +494,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'chair-9806-ergonomic',
-    model: '9806#',
+    model: '9806',
     name: 'Ergonomic Tailored Accent Armchair',
     nameCn: '人体工学休闲单椅',
     category: 'chairs-tables',
@@ -516,7 +516,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'chair-9807-lounge',
-    model: '9807#',
+    model: '9807',
     name: 'Modernist Curved Accent Chair',
     nameCn: '弧形艺术休闲单椅',
     category: 'chairs-tables',
@@ -538,7 +538,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'chair-9809-highback',
-    model: '9809#',
+    model: '9809',
     name: 'Sage High-Back Ergonomic Recliner Armchair',
     nameCn: '高背功能休闲单椅',
     category: 'chairs-tables',
@@ -561,7 +561,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'chair-x15-sled',
-    model: 'X-15#',
+    model: 'X-15',
     name: 'Sled-Base Architectural Lounge Chair',
     nameCn: 'X-15 雪橇底座设计单椅',
     category: 'chairs-tables',
@@ -583,7 +583,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'cabinet-01-no3-sage',
-    model: 'No.3#',
+    model: 'No.3',
     name: 'Sage & Sintered Stone Two-Drawer Nightstand',
     nameCn: '3号 尤加利绿岩板床头柜',
     category: 'chairs-tables',
@@ -605,7 +605,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'cabinet-02-s56-walnut',
-    model: 'S-56#',
+    model: 'S-56',
     name: 'Walnut & Brass Two-Drawer Nightstand',
     nameCn: 'S-56 胡桃木双抽床头柜',
     category: 'chairs-tables',
@@ -627,7 +627,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'cabinet-03-no4-taupe',
-    model: 'No.4#',
+    model: 'No.4',
     name: 'Taupe Leatherette Two-Drawer Nightstand',
     nameCn: '4号 软包极简床头柜',
     category: 'chairs-tables',
@@ -791,7 +791,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'ta2397-terracotta-wing-bed',
-    model: 'TA2397#',
+    model: 'TA2397',
     name: 'Terracotta Wrap-Around Wing Bed',
     nameCn: '焦糖橘羽翼大床',
     category: 'beds',
@@ -815,7 +815,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'ta2573-curved-wing-bed',
-    model: 'TA2573#',
+    model: 'TA2573',
     name: 'Queen Curved Wing Leather Bed',
     nameCn: '女王 弧形羽翼皮床',
     category: 'beds',
@@ -838,7 +838,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'ta2576-luxury-upholstered-bed',
-    model: 'TA2576#',
+    model: 'TA2576',
     name: 'Two-Tone Saddle & Linen Platform Bed',
     nameCn: '拼色轻奢软床',
     category: 'beds',
@@ -863,7 +863,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'taa2186-fashionable-soft-bed',
-    model: 'TAA2186#',
+    model: 'TAA2186',
     name: 'Italian Saddle Leather Soft Bed',
     nameCn: '意式马鞍皮软床',
     category: 'beds',
@@ -877,17 +877,17 @@ export const PRODUCTS: Product[] = [
       width: '185 cm',
       height: '105 cm'
     },
-    matchingItems: 'Matching Nightstand Model: S-36#',
+    matchingItems: 'Matching Nightstand Model: S-36',
     frameSpec: 'Reinforced Ribbed Platform Slat Structure',
     materials: ['Full Top-Grain Leather', 'Dual Pillow Sponge Headboard', 'Reinforced Solid Wood Ribbed Slats'],
     colors: ['Cognac Brown', 'Warm Camel'],
-    features: ['Dual split-pillow cushioned headboard', 'Reinforced ribbed platform slat foundation', 'Coordinating S-36# bedside tables'],
+    features: ['Dual split-pillow cushioned headboard', 'Reinforced ribbed platform slat foundation', 'Coordinating S-36 bedside tables'],
     pageNumber: 29,
     heroImage: IMAGES.taa2186,
   },
   {
     id: 'taa2188-tufted-wingback-bed',
-    model: 'TAA2188#',
+    model: 'TAA2188',
     name: 'Tufted Wingback Leather Bed',
     nameCn: '高背绗缝羽翼皮床',
     category: 'beds',
@@ -901,18 +901,18 @@ export const PRODUCTS: Product[] = [
       width: '238 cm',
       height: '114 cm'
     },
-    matchingItems: 'Matching Nightstand Model: K21# and Matching Leather Stool',
+    matchingItems: 'Matching Nightstand Model: K21 and Matching Leather Stool',
     frameSpec: 'Reinforced Ribbed Platform Slat Structure',
     materials: ['Top-Grain Terracotta Leather', 'High-Density Sponge', 'Heavy-Duty Reinforced Ribbed Slats'],
     colors: ['Terracotta Saddle Brown', 'Chestnut'],
-    features: ['Expansive 238cm winged grid-tufted headboard', 'Reinforced platform slat frame', 'Matching K21# nightstands & leather ottoman'],
+    features: ['Expansive 238cm winged grid-tufted headboard', 'Reinforced platform slat frame', 'Matching K21 nightstands & leather ottoman'],
     pageNumber: 30,
     featured: true,
     heroImage: IMAGES.taa2188,
   },
   {
     id: 'taq003-pistachio-sage-bed',
-    model: 'TA9003#',
+    model: 'TA9003',
     name: 'Pistachio Sage Soft Curved Bed',
     nameCn: '开心果绿弧形软包床',
     category: 'beds',
@@ -936,7 +936,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'taq004-memory-foam-two-tone-bed',
-    model: 'TA9004#',
+    model: 'TA9004',
     name: 'Zero-Pressure Two-Tone Padded Bed',
     nameCn: '零压拼色靠包大床',
     category: 'beds',
@@ -960,7 +960,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'taq007-burnt-orange-leather-bed',
-    model: 'TA9007#',
+    model: 'TA9007',
     name: 'Burnt Orange Geometric Headboard Bed',
     nameCn: '焦糖橘菱格纹真皮床',
     category: 'beds',
@@ -983,7 +983,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'taq008-olive-floating-platform-bed',
-    model: 'TA9008#',
+    model: 'TA9008',
     name: 'Olive Green Floating Platform Bed',
     nameCn: '橄榄绿轻盈悬浮床',
     category: 'beds',
@@ -1007,7 +1007,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'taq9001-slate-geometric-bed',
-    model: 'TAQ9001#',
+    model: 'TAQ9001',
     name: 'Slate Minimalist Geometric Bed',
     nameCn: '极简几何线条真皮床',
     category: 'beds',

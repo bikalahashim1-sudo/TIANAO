@@ -89,7 +89,7 @@ test('src/data/products.ts has zero CJK characters in non-Cn fields', () => {
 test('getLocalizedProduct isolates Chinese to zh mode only', () => {
   const sample: Product = {
     id: 'ta-minimalist-walnut-boucle-sofa',
-    model: 'TA-M04#',
+    model: 'TA-M04',
     name: 'Sculpted Walnut & Ivory Bouclé 3-Seater Sofa',
     nameCn: '胡桃木极简羊羔绒沙发',
     category: 'sofas',
@@ -118,4 +118,34 @@ test('getLocalizedProduct isolates Chinese to zh mode only', () => {
   const zhView = getLocalizedProduct(sample, 'zh');
   assert.equal(zhView.name, '胡桃木极简羊羔绒沙发');
   assert.equal(zhView.series, '高端极简系列');
+});
+
+test('furniture model labels contain zero # symbols across products, Hero, and translations', () => {
+  const dataFilesToCheck = [
+    'src/data/products.ts',
+    'src/i18n/productTranslations.ts',
+    'src/i18n/translations.ts',
+  ];
+  for (const file of dataFilesToCheck) {
+    const content = fs.readFileSync(file, 'utf8');
+    assert.equal(
+      /#/.test(content),
+      false,
+      `Unexpected # character found in ${file}`
+    );
+  }
+
+  const heroContent = fs.readFileSync('src/components/Hero.tsx', 'utf8');
+  const badgeMatches = [...heroContent.matchAll(/badgeModel:\s*'([^']+)'/g)].map((m) => m[1]);
+  assert.ok(badgeMatches.length >= 4);
+  for (const badge of badgeMatches) {
+    assert.equal(badge.includes('#'), false, `Unexpected # in Hero badgeModel: ${badge}`);
+  }
+
+  const catContent = fs.readFileSync('src/components/CategorySection.tsx', 'utf8');
+  const highlightMatches = [...catContent.matchAll(/highlightModel:\s*'([^']+)'/g)].map((m) => m[1]);
+  assert.equal(highlightMatches.length, 4);
+  for (const hl of highlightMatches) {
+    assert.equal(hl.includes('#'), false, `Unexpected # in CategorySection highlightModel: ${hl}`);
+  }
 });

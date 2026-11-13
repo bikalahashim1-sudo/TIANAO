@@ -20,7 +20,7 @@ export const CategorySection: React.FC<CategorySectionProps> = ({ onSelectCatego
       subtitle: t.categoriesSection.items.sofas.subtitle,
       count: `${countByCat('sofas')} ${t.categoriesSection.modelsUnit}`,
       desc: t.categoriesSection.items.sofas.desc,
-      highlightModel: 'TA-M04# · TA-EX01# · TA9106#',
+      highlightModel: 'TA-M04 · TA-EX01 · TA9106',
       bgClass: 'bg-[#F2EFE9]',
     },
     {
@@ -29,7 +29,7 @@ export const CategorySection: React.FC<CategorySectionProps> = ({ onSelectCatego
       subtitle: t.categoriesSection.items.recliners.subtitle,
       count: `${countByCat('recliners')} ${t.categoriesSection.modelsUnit}`,
       desc: t.categoriesSection.items.recliners.desc,
-      highlightModel: 'TA9810# · TA9102#',
+      highlightModel: 'TA9810 · TA9102',
       bgClass: 'bg-[#EAE7DF]',
     },
     {
@@ -38,7 +38,7 @@ export const CategorySection: React.FC<CategorySectionProps> = ({ onSelectCatego
       subtitle: t.categoriesSection.items.beds.subtitle,
       count: `${countByCat('beds')} ${t.categoriesSection.modelsUnit}`,
       desc: t.categoriesSection.items.beds.desc,
-      highlightModel: 'TAA2188# · TA2576# · BED-01',
+      highlightModel: 'TAA2188 · TA2576 · BED-01',
       bgClass: 'bg-[#E5E1D7]',
     },
     {
@@ -47,7 +47,7 @@ export const CategorySection: React.FC<CategorySectionProps> = ({ onSelectCatego
       subtitle: t.categoriesSection.items['chairs-tables'].subtitle,
       count: `${countByCat('chairs-tables')} ${t.categoriesSection.modelsUnit}`,
       desc: t.categoriesSection.items['chairs-tables'].desc,
-      highlightModel: 'TA-M02# · 9808# · DINING-01',
+      highlightModel: 'TA-M02 · 9808 · DINING-01',
       bgClass: 'bg-[#DFDBD0]',
     },
   ];
