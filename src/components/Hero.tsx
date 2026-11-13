@@ -106,117 +106,18 @@ export const Hero: React.FC<HeroProps> = ({
     }
     const timer = window.setInterval(() => {
       setActiveSlide((prev) => (prev + 1) % HERO_SLIDES.length);
-    }, 4000);
+    }, 2000);
     return () => window.clearInterval(timer);
   }, [isAutoPlaying, activeSlide]);
 
   const current = HERO_SLIDES[activeSlide];
 
   return (
-    <section className="w-full bg-[#141312] text-white overflow-hidden">
-      {/* Full-Bleed Edge-to-Edge Split Carousel Stage */}
+    <section className="w-full bg-[#F7F6F2] text-[#191919] overflow-hidden">
+      {/* Full-Bleed Edge-to-Edge Split Carousel Stage (Images Left, Editorial Copy Right) */}
       <div className="w-full grid grid-cols-1 lg:grid-cols-12 items-stretch">
-        {/* Left Editorial Copy Panel (Bottom on Mobile, Left 5 Columns on Desktop) */}
-        <div className="order-2 lg:order-1 lg:col-span-5 bg-[#141312] flex flex-col justify-between px-4 sm:px-8 lg:pl-[max(2rem,calc((100vw-80rem)/2+2rem))] lg:pr-10 py-8 sm:py-12 border-t lg:border-t-0 lg:border-r border-stone-800">
-          <div className="space-y-4">
-            <div className="flex items-center justify-between gap-3">
-              <span className="text-[11px] font-mono tracking-widest uppercase text-[#F7D117] font-semibold">
-                5GOOD · {current.badgeModel}
-              </span>
-              <span className="text-[11px] font-mono tabular-nums text-stone-400">
-                {String(activeSlide + 1).padStart(2, '0')} / {String(HERO_SLIDES.length).padStart(2, '0')}
-              </span>
-            </div>
-
-            <p className="text-[11px] font-mono tracking-wider uppercase text-stone-400">
-              {current.kicker}
-            </p>
-
-            <div className="space-y-2">
-              <h1 className="font-editorial text-3xl sm:text-4xl xl:text-[2.75rem] font-bold tracking-tight text-white leading-[1.1] text-balance">
-                {current.title}
-              </h1>
-              <p className="font-editorial text-base sm:text-lg text-amber-100/90 font-medium">
-                {current.subtitleCn}
-              </p>
-            </div>
-
-            <p className="text-xs sm:text-sm text-stone-300 font-light leading-relaxed">
-              {current.description}
-            </p>
-
-            {/* Primary & Secondary CTAs */}
-            <div className="pt-3 flex flex-wrap items-center gap-3">
-              <button
-                type="button"
-                onClick={onExplore}
-                className="px-5 py-3 bg-[#005EA8] hover:bg-[#004B87] text-white text-xs font-semibold uppercase tracking-wider flex items-center gap-2 transition-colors cursor-pointer shadow-lg whitespace-nowrap shrink-0"
-              >
-                <span>Explore Collection</span>
-                <ArrowRight className="w-4 h-4" />
-              </button>
-
-              <button
-                type="button"
-                onClick={onRequestQuote}
-                className="px-5 py-3 bg-[#F7D117] hover:bg-amber-300 text-[#141312] text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer whitespace-nowrap shrink-0"
-              >
-                Request a Quote
-              </button>
-
-              {current.productId && onSelectProductById && (
-                <button
-                  type="button"
-                  onClick={() => onSelectProductById(current.productId!)}
-                  className="px-4 py-3 bg-[#1D1C1A] hover:bg-stone-800 text-white border border-stone-700 text-xs font-mono flex items-center gap-1.5 transition-colors cursor-pointer whitespace-nowrap shrink-0"
-                >
-                  <span>Inspect {current.badgeModel}</span>
-                  <ArrowUpRight className="w-3.5 h-3.5 text-[#F7D117]" />
-                </button>
-              )}
-
-              <button
-                type="button"
-                onClick={onOpenCatalogue}
-                className="px-3 py-3 text-stone-300 hover:text-[#F7D117] text-xs font-mono flex items-center gap-1.5 transition-colors cursor-pointer whitespace-nowrap shrink-0"
-              >
-                <FileText className="w-3.5 h-3.5 text-[#F7D117]" />
-                <span>Browse 36-Page Catalogue</span>
-              </button>
-            </div>
-          </div>
-
-          {/* Slide Navigation Dots & Playback Control */}
-          <div className="pt-8 mt-6 border-t border-stone-800/80 flex items-center justify-between gap-4">
-            <div className="flex items-center gap-2 min-w-0">
-              {HERO_SLIDES.map((s, idx) => (
-                <button
-                  key={s.id}
-                  type="button"
-                  onClick={() => setActiveSlide(idx)}
-                  aria-label={`View slide ${idx + 1}: ${s.badgeLabel}`}
-                  className={`h-1.5 transition-all duration-300 cursor-pointer shrink-0 ${
-                    idx === activeSlide ? 'w-10 bg-[#F7D117]' : 'w-4 bg-stone-700 hover:bg-stone-500'
-                  }`}
-                />
-              ))}
-              <span className="ml-2 text-[11px] font-mono text-stone-400 truncate">
-                {current.badgeLabel}
-              </span>
-            </div>
-
-            <button
-              type="button"
-              onClick={() => setIsAutoPlaying((prev) => !prev)}
-              className="text-[11px] font-mono uppercase tracking-wider text-stone-400 hover:text-white transition-colors cursor-pointer whitespace-nowrap shrink-0"
-            >
-              {isAutoPlaying ? 'Auto · On' : 'Auto · Paused'}
-            </button>
-          </div>
-        </div>
-
-        {/* Right Edge-to-Edge Auto-Sliding Carousel Viewport (Top on Mobile, Right 7 Columns on Desktop) */}
-        <div className="order-1 lg:order-2 lg:col-span-7 relative w-full h-[260px] sm:h-[440px] lg:h-[580px] xl:h-[620px] bg-[#1D1C1A] overflow-hidden">
+        {/* Left Edge-to-Edge Auto-Sliding Carousel Viewport (Top on Mobile, Left 7 Columns on Desktop) */}
+        <div className="order-1 lg:col-span-7 relative w-full h-[260px] sm:h-[440px] lg:h-[580px] xl:h-[620px] bg-[#F7F6F2] overflow-hidden">
           {/* Horizontal Sliding Track */}
           <div
             className="flex w-full h-full transition-transform duration-700 ease-out"
@@ -226,17 +127,17 @@ export const Hero: React.FC<HeroProps> = ({
               <div
                 key={slide.id}
                 className={`relative w-full h-full shrink-0 overflow-hidden flex items-center justify-center ${
-                  slide.framing === 'studio' ? 'bg-white' : 'bg-[#1D1C1A]'
+                  slide.framing === 'studio' ? 'bg-white' : 'bg-[#EFECE6]'
                 }`}
               >
-                {/* Ambient Edge Fill for Room Photos so Zero Cropping Leaves Zero Harsh Bars */}
+                {/* Soft Light Ambient Edge Fill for Room Photos */}
                 {slide.framing === 'room' && (
                   <img
                     src={slide.image}
                     alt=""
                     aria-hidden="true"
                     referrerPolicy="no-referrer"
-                    className="absolute inset-0 w-full h-full object-cover scale-110 blur-2xl opacity-55 pointer-events-none"
+                    className="absolute inset-0 w-full h-full object-cover scale-110 blur-2xl opacity-35 pointer-events-none"
                   />
                 )}
 
@@ -253,19 +154,29 @@ export const Hero: React.FC<HeroProps> = ({
             ))}
           </div>
 
-          {/* Subtle Model Tag Overlay (Top-Left Corner of Visual Stage) */}
-          <div className="absolute top-4 left-4 sm:top-6 sm:left-6 z-20 flex items-center gap-2 text-[11px] font-mono tracking-widest uppercase text-[#F7D117] bg-[#141312]/85 backdrop-blur-xs px-3 py-1.5 border border-white/15">
+          {/* Soft Feather Blend Seam Into the Right Ivory Panel (Desktop) & Bottom (Mobile) */}
+          <div
+            className="hidden lg:block pointer-events-none absolute inset-y-0 right-0 w-24 z-20 bg-gradient-to-l from-[#F7F6F2] via-[#F7F6F2]/50 to-transparent"
+            aria-hidden="true"
+          />
+          <div
+            className="lg:hidden pointer-events-none absolute inset-x-0 bottom-0 h-10 z-20 bg-gradient-to-t from-[#F7F6F2] to-transparent"
+            aria-hidden="true"
+          />
+
+          {/* Refined Light Model Tag Overlay (Top-Left Corner of Visual Stage) */}
+          <div className="absolute top-4 left-4 sm:top-6 sm:left-6 z-30 flex items-center gap-2 text-[11px] font-mono tracking-widest uppercase text-[#005EA8] bg-white/90 backdrop-blur-xs px-3 py-1.5 border border-stone-200/90 shadow-xs">
             <span className="font-bold">{current.badgeModel}</span>
-            <span aria-hidden="true" className="text-stone-500">·</span>
-            <span className="text-white/95 truncate max-w-[180px] sm:max-w-xs">{current.badgeLabel}</span>
+            <span aria-hidden="true" className="text-stone-400">·</span>
+            <span className="text-stone-800 truncate max-w-[180px] sm:max-w-xs">{current.badgeLabel}</span>
           </div>
 
           {/* Carousel Prev / Next Controls */}
-          <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 z-20 flex items-center gap-2">
+          <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-8 z-30 flex items-center gap-2">
             <button
               type="button"
               onClick={() => setActiveSlide((prev) => (prev - 1 + HERO_SLIDES.length) % HERO_SLIDES.length)}
-              className="w-10 h-10 bg-[#141312]/80 hover:bg-[#005EA8] text-white border border-white/20 flex items-center justify-center transition-colors cursor-pointer"
+              className="w-10 h-10 bg-white/90 hover:bg-[#005EA8] text-stone-800 hover:text-white border border-stone-200/90 shadow-xs flex items-center justify-center transition-colors cursor-pointer"
               aria-label="Previous showcase slide"
             >
               <ChevronLeft className="w-4 h-4" />
@@ -273,33 +184,132 @@ export const Hero: React.FC<HeroProps> = ({
             <button
               type="button"
               onClick={() => setActiveSlide((prev) => (prev + 1) % HERO_SLIDES.length)}
-              className="w-10 h-10 bg-[#141312]/80 hover:bg-[#005EA8] text-white border border-white/20 flex items-center justify-center transition-colors cursor-pointer"
+              className="w-10 h-10 bg-white/90 hover:bg-[#005EA8] text-stone-800 hover:text-white border border-stone-200/90 shadow-xs flex items-center justify-center transition-colors cursor-pointer"
               aria-label="Next showcase slide"
             >
               <ChevronRight className="w-4 h-4" />
             </button>
           </div>
         </div>
+
+        {/* Right Editorial Copy Panel (Bottom on Mobile, Right 5 Columns on Desktop) */}
+        <div className="order-2 lg:col-span-5 bg-[#F7F6F2] flex flex-col justify-between px-4 sm:px-8 lg:pl-8 lg:pr-[max(2rem,calc((100vw-80rem)/2+2rem))] py-8 sm:py-12">
+          <div className="space-y-4">
+            <div className="flex items-center justify-between gap-3">
+              <span className="text-[11px] font-mono tracking-widest uppercase text-[#005EA8] font-bold">
+                5GOOD · {current.badgeModel}
+              </span>
+              <span className="text-[11px] font-mono tabular-nums text-stone-500">
+                {String(activeSlide + 1).padStart(2, '0')} / {String(HERO_SLIDES.length).padStart(2, '0')}
+              </span>
+            </div>
+
+            <p className="text-[11px] font-mono tracking-wider uppercase text-stone-500">
+              {current.kicker}
+            </p>
+
+            <div className="space-y-2">
+              <h1 className="font-editorial text-3xl sm:text-4xl xl:text-[2.75rem] font-bold tracking-tight text-[#191919] leading-[1.1] text-balance">
+                {current.title}
+              </h1>
+              <p className="font-editorial text-base sm:text-lg text-stone-700 font-medium">
+                {current.subtitleCn}
+              </p>
+            </div>
+
+            <p className="text-xs sm:text-sm text-stone-600 font-normal leading-relaxed">
+              {current.description}
+            </p>
+
+            {/* Primary & Secondary CTAs */}
+            <div className="pt-3 flex flex-wrap items-center gap-3">
+              <button
+                type="button"
+                onClick={onExplore}
+                className="px-5 py-3 bg-[#005EA8] hover:bg-[#00457C] text-white text-xs font-semibold uppercase tracking-wider flex items-center gap-2 transition-colors cursor-pointer shadow-sm whitespace-nowrap shrink-0"
+              >
+                <span>Explore Collection</span>
+                <ArrowRight className="w-4 h-4" />
+              </button>
+
+              <button
+                type="button"
+                onClick={onRequestQuote}
+                className="px-5 py-3 bg-[#F7D117] hover:bg-amber-300 text-[#191919] text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer whitespace-nowrap shrink-0 shadow-xs"
+              >
+                Request a Quote
+              </button>
+
+              {current.productId && onSelectProductById && (
+                <button
+                  type="button"
+                  onClick={() => onSelectProductById(current.productId!)}
+                  className="px-4 py-3 bg-white hover:bg-stone-50 text-[#191919] border border-stone-300 text-xs font-mono flex items-center gap-1.5 transition-colors cursor-pointer whitespace-nowrap shrink-0"
+                >
+                  <span>Inspect {current.badgeModel}</span>
+                  <ArrowUpRight className="w-3.5 h-3.5 text-[#005EA8]" />
+                </button>
+              )}
+
+              <button
+                type="button"
+                onClick={onOpenCatalogue}
+                className="px-3 py-3 text-stone-700 hover:text-[#005EA8] text-xs font-mono flex items-center gap-1.5 transition-colors cursor-pointer whitespace-nowrap shrink-0"
+              >
+                <FileText className="w-3.5 h-3.5 text-[#005EA8]" />
+                <span>Browse 36-Page Catalogue</span>
+              </button>
+            </div>
+          </div>
+
+          {/* Slide Navigation Dots & Playback Control */}
+          <div className="pt-8 mt-6 border-t border-[#E8E6E1] flex items-center justify-between gap-4">
+            <div className="flex items-center gap-2 min-w-0">
+              {HERO_SLIDES.map((s, idx) => (
+                <button
+                  key={s.id}
+                  type="button"
+                  onClick={() => setActiveSlide(idx)}
+                  aria-label={`View slide ${idx + 1}: ${s.badgeLabel}`}
+                  className={`h-1.5 transition-all duration-300 cursor-pointer shrink-0 ${
+                    idx === activeSlide ? 'w-10 bg-[#005EA8]' : 'w-4 bg-stone-300 hover:bg-stone-400'
+                  }`}
+                />
+              ))}
+              <span className="ml-2 text-[11px] font-mono text-stone-600 truncate">
+                {current.badgeLabel}
+              </span>
+            </div>
+
+            <button
+              type="button"
+              onClick={() => setIsAutoPlaying((prev) => !prev)}
+              className="text-[11px] font-mono uppercase tracking-wider text-stone-600 hover:text-[#005EA8] transition-colors cursor-pointer whitespace-nowrap shrink-0"
+            >
+              {isAutoPlaying ? 'Auto · On' : 'Auto · Paused'}
+            </button>
+          </div>
+        </div>
       </div>
 
       {/* Full-Width 4-Column Proof Metrics Ribbon Below Hero */}
-      <div className="w-full bg-[#141312] border-t border-stone-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-8 py-7 grid grid-cols-2 sm:grid-cols-4 gap-6 text-stone-300">
+      <div className="w-full bg-[#FBFBFA] border-t border-[#E8E6E1]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 py-6 grid grid-cols-2 sm:grid-cols-4 gap-6 text-stone-700">
           <div>
-            <span className="font-mono tabular-nums text-xl sm:text-2xl font-bold text-white block">20,000 m²</span>
-            <span className="text-xs text-stone-400 font-sans">Manufacturing Facility · 厂房面积</span>
+            <span className="font-mono tabular-nums text-xl sm:text-2xl font-bold text-[#191919] block">20,000 m²</span>
+            <span className="text-xs text-stone-500 font-sans">Manufacturing Facility · 厂房面积</span>
           </div>
           <div>
-            <span className="font-mono tabular-nums text-xl sm:text-2xl font-bold text-white block">1,000 m²</span>
-            <span className="text-xs text-stone-400 font-sans">Flagship Showroom · 展厅面积</span>
+            <span className="font-mono tabular-nums text-xl sm:text-2xl font-bold text-[#191919] block">1,000 m²</span>
+            <span className="text-xs text-stone-500 font-sans">Flagship Showroom · 展厅面积</span>
           </div>
           <div>
-            <span className="font-mono tabular-nums text-xl sm:text-2xl font-bold text-white block">100+</span>
-            <span className="text-xs text-stone-400 font-sans">Skilled Staff & Engineers · 员工人数</span>
+            <span className="font-mono tabular-nums text-xl sm:text-2xl font-bold text-[#191919] block">100+</span>
+            <span className="text-xs text-stone-500 font-sans">Skilled Staff & Engineers · 员工人数</span>
           </div>
           <div>
-            <span className="font-mono tabular-nums text-xl sm:text-2xl font-bold text-[#F7D117] block">5GOOD</span>
-            <span className="text-xs text-stone-400 font-sans">Health · Comfort · Design · Quality · Service</span>
+            <span className="font-mono tabular-nums text-xl sm:text-2xl font-bold text-[#005EA8] block">5GOOD</span>
+            <span className="text-xs text-stone-500 font-sans">Health · Comfort · Design · Quality · Service</span>
           </div>
         </div>
       </div>
