@@ -1,7 +1,8 @@
 import React from 'react';
-import { COMPANY_INFO } from '../data/products';
 import { IMAGES } from '../assets/images';
 import { ArrowUp, Phone, MapPin, Globe, FileText } from 'lucide-react';
+import { useLanguage } from '../i18n/LanguageContext';
+import { SERIES_TRANSLATIONS } from '../i18n/productTranslations';
 
 interface FooterProps {
   onNavigate: (view: 'home' | 'collection' | 'categories' | 'about' | 'contact') => void;
@@ -14,15 +15,17 @@ export const Footer: React.FC<FooterProps> = ({
   onRequestQuote,
   onOpenCatalogue,
 }) => {
+  const { t, language } = useLanguage();
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
-    <footer className="bg-[#141312] text-stone-300 border-t border-stone-800 font-sans">
+    <footer className="bg-[#141312] text-stone-200 border-t border-stone-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 pb-16 border-b border-stone-800">
-          {/* Brand & Mission (5 Cols) */}
+          {/* Brand & Mission */}
           <div className="lg:col-span-5 space-y-4">
             <div className="flex items-center gap-3">
               <div className="h-12 w-auto flex-shrink-0 flex items-center justify-center rounded-xs bg-white px-2 py-1 shadow-sm border border-stone-700/60">
@@ -34,99 +37,110 @@ export const Footer: React.FC<FooterProps> = ({
               </div>
               <div>
                 <h3 className="font-editorial text-2xl font-bold text-white tracking-wider">
-                  TIANAO FURNITURE
+                  {t.footer.brandTitle}
                 </h3>
-                <p className="text-[10px] font-mono text-stone-500 uppercase tracking-widest">
-                  天奥家具制造有限公司 · 5good
+                <p className="text-xs text-stone-400 uppercase tracking-wider font-medium">
+                  {t.footer.brandSub}
                 </p>
               </div>
             </div>
 
-            <p className="text-xs text-stone-400 leading-relaxed max-w-sm">
-              Medium-to-large modern upholstered furniture enterprise integrating R&D, design, production, and sales. Established in July 2024 through a partnership between Uganda Tiantang Group and Hangzhou Aumere Furniture from China.
+            <p className="text-sm text-stone-300 leading-relaxed max-w-sm">
+              {t.footer.summary}
             </p>
 
-            <div className="pt-2 text-xs font-mono text-amber-400">
-              <p>Five Excellence Strategy: Good Health · Comfort · Design · Quality · Service</p>
+            <div className="pt-2 text-sm text-amber-400 font-medium">
+              <p>{t.footer.strategy}</p>
             </div>
           </div>
 
-          {/* Quick Links (2 Cols) */}
+          {/* Quick Links */}
           <div className="lg:col-span-2 space-y-3">
-            <h4 className="text-xs font-mono uppercase tracking-widest text-white font-semibold">
-              Navigation
+            <h4 className="text-sm uppercase tracking-widest text-white font-semibold">
+              {t.footer.navHeading}
             </h4>
-            <ul className="space-y-2 text-xs text-stone-400">
+            <ul className="space-y-2.5 text-sm text-stone-300">
               <li>
-                <button onClick={() => onNavigate('home')} className="hover:text-white transition-colors cursor-pointer">
-                  Home Showroom
+                <button type="button" onClick={() => onNavigate('home')} className="hover:text-white transition-colors cursor-pointer">
+                  {t.footer.navHome}
                 </button>
               </li>
               <li>
-                <button onClick={() => onNavigate('collection')} className="hover:text-white transition-colors cursor-pointer">
-                  Complete Catalogue
+                <button type="button" onClick={() => onNavigate('collection')} className="hover:text-white transition-colors cursor-pointer">
+                  {t.footer.navCatalogue}
                 </button>
               </li>
               <li>
-                <button onClick={() => onNavigate('categories')} className="hover:text-white transition-colors cursor-pointer">
-                  Product Categories
+                <button type="button" onClick={() => onNavigate('categories')} className="hover:text-white transition-colors cursor-pointer">
+                  {t.footer.navCategories}
                 </button>
               </li>
               <li>
-                <button onClick={() => onNavigate('about')} className="hover:text-white transition-colors cursor-pointer">
-                  Factory & Profile
+                <button type="button" onClick={() => onNavigate('about')} className="hover:text-white transition-colors cursor-pointer">
+                  {t.footer.navAbout}
                 </button>
               </li>
               <li>
-                <button onClick={() => onNavigate('contact')} className="hover:text-white transition-colors cursor-pointer">
-                  Showroom Contact
+                <button type="button" onClick={() => onNavigate('contact')} className="hover:text-white transition-colors cursor-pointer">
+                  {t.footer.navContact}
                 </button>
               </li>
             </ul>
           </div>
 
-          {/* Product Series (2 Cols) */}
+          {/* Product Series */}
           <div className="lg:col-span-2 space-y-3">
-            <h4 className="text-xs font-mono uppercase tracking-widest text-white font-semibold">
-              Product Series
+            <h4 className="text-sm uppercase tracking-widest text-white font-semibold">
+              {t.footer.seriesHeading}
             </h4>
-            <ul className="space-y-2 text-xs text-stone-400">
-              <li>Modern Luxury Series</li>
-              <li>High-End Minimalist Series</li>
-              <li>High-End Simple Luxury Series</li>
+            <ul className="space-y-2.5 text-sm text-stone-300">
+              <li>{SERIES_TRANSLATIONS[language]['Modern Luxury Series']}</li>
+              <li>{SERIES_TRANSLATIONS[language]['High-End Minimalist Series']}</li>
+              <li>{SERIES_TRANSLATIONS[language]['High-End Simple Luxury Series']}</li>
               <li className="pt-2">
                 <button
+                  type="button"
                   onClick={onOpenCatalogue}
-                  className="text-amber-400 hover:underline flex items-center gap-1.5 cursor-pointer"
+                  className="text-amber-400 hover:underline flex items-center gap-1.5 cursor-pointer font-medium"
                 >
-                  <FileText className="w-3.5 h-3.5" />
-                  <span>36-Page Catalogue Index</span>
+                  <FileText className="w-4 h-4" />
+                  <span>{t.footer.catalogueIndex}</span>
                 </button>
               </li>
             </ul>
           </div>
 
-          {/* Manufacturing Location & Contacts (3 Cols) */}
+          {/* Manufacturing Location & Contacts */}
           <div className="lg:col-span-3 space-y-3">
-            <h4 className="text-xs font-mono uppercase tracking-widest text-white font-semibold">
-              Plant & Showroom
+            <h4 className="text-sm uppercase tracking-widest text-white font-semibold">
+              {t.footer.plantHeading}
             </h4>
-            <div className="space-y-2.5 text-xs text-stone-400 font-mono">
-              <p className="flex items-start gap-2">
-                <MapPin className="w-4 h-4 text-amber-500 flex-shrink-0 mt-0.5" />
-                <span>Sino-Uganda Mbale Industrial Park, Mbale, Uganda</span>
+            <div className="space-y-3 text-sm text-stone-300">
+              <p className="flex items-start gap-2.5">
+                <MapPin className="w-4 h-4 text-amber-500 flex-shrink-0 mt-1" />
+                <span>{t.topBarLocation}</span>
               </p>
-              <p className="flex items-center gap-2">
+              <p className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-amber-500 flex-shrink-0" />
-                <a href="tel:+256744477777" className="hover:text-white">+256 744 477 777</a>
+                <a href="tel:+256744477777" dir="ltr" className="hover:text-white">
+                  +256 744 477 777
+                </a>
               </p>
-              <p className="flex items-center gap-2">
+              <p className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-amber-500 flex-shrink-0" />
-                <a href="tel:+256744377777" className="hover:text-white">+256 744 377 777</a>
+                <a href="tel:+256744377777" dir="ltr" className="hover:text-white">
+                  +256 744 377 777
+                </a>
               </p>
-              <p className="flex items-center gap-2">
+              <p className="flex items-center gap-2.5">
                 <Globe className="w-4 h-4 text-amber-500 flex-shrink-0" />
-                <a href="https://tianaofurniture.co.ug" target="_blank" rel="noopener noreferrer" className="hover:text-white truncate">
+                <a
+                  href="https://tianaofurniture.co.ug"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  dir="ltr"
+                  className="hover:text-white truncate"
+                >
                   https://tianaofurniture.co.ug
                 </a>
               </p>
@@ -134,28 +148,30 @@ export const Footer: React.FC<FooterProps> = ({
 
             <div className="pt-2">
               <button
+                type="button"
                 onClick={onRequestQuote}
-                className="w-full py-2.5 bg-stone-800 hover:bg-stone-700 text-white text-xs font-semibold uppercase tracking-wider transition-colors cursor-pointer text-center"
+                className="w-full py-3 bg-stone-800 hover:bg-[#005EA8] text-white text-sm font-semibold uppercase tracking-wider transition-colors cursor-pointer text-center"
               >
-                Request a Custom Quote
+                {t.cta.requestQuote}
               </button>
             </div>
           </div>
         </div>
 
         {/* Bottom Bar with Copyright */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-stone-500">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-stone-400">
           <p>
-            © {new Date().getFullYear()} TIANAO Furniture Manufacturing Co., Ltd. (天奥家具制造有限公司). All rights reserved.
+            © {new Date().getFullYear()} {t.contact.companyTitle} {t.footer.copyright}
           </p>
-          <div className="flex items-center gap-6">
-            <span>Mbale, Uganda</span>
+          <div className="flex items-center gap-5">
+            <span>{t.footer.locationShort}</span>
             <span>·</span>
-            <span>Uganda Tiantang Group & Hangzhou Aumere Furniture</span>
+            <span>{t.footer.foundersShort}</span>
             <button
+              type="button"
               onClick={scrollToTop}
-              className="p-2 bg-stone-900 hover:bg-stone-800 text-stone-400 hover:text-white transition-colors cursor-pointer"
-              aria-label="Scroll to top"
+              className="p-2.5 bg-stone-900 hover:bg-stone-800 text-stone-300 hover:text-white transition-colors cursor-pointer"
+              aria-label={t.cta.scrollToTop}
             >
               <ArrowUp className="w-4 h-4" />
             </button>

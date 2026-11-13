@@ -2,6 +2,7 @@ import React from 'react';
 import { Product } from '../data/products';
 import { ProductVisual } from './ProductVisual';
 import { ArrowUpRight, Plus, Check } from 'lucide-react';
+import { useLanguage } from '../i18n/LanguageContext';
 
 interface ProductCardProps {
   product: Product;
@@ -16,9 +17,12 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   onQuickAddQuote,
   isInQuote = false,
 }) => {
+  const { t, localizeProduct } = useLanguage();
+  const loc = localizeProduct(product);
+
   return (
     <article
-      className="group relative flex flex-col bg-white border border-[#E8E6E1] hover:border-stone-400 transition-all duration-300 shadow-2xs hover:shadow-md cursor-pointer"
+      className="group relative flex flex-col bg-white border border-[#E8E6E1] hover:border-[#005EA8] transition-all duration-300 shadow-2xs hover:shadow-md cursor-pointer text-start"
       onClick={() => onSelect(product)}
     >
       {/* Product Image / Visual Showcase */}
@@ -31,17 +35,17 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         />
 
         {/* Quick Action Overlay on hover */}
-        <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10">
+        <div className="absolute bottom-3 inset-x-3 flex items-center justify-between opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10">
           <button
             type="button"
             onClick={(e) => {
               e.stopPropagation();
               onSelect(product);
             }}
-            className="px-3 py-1.5 bg-white/95 hover:bg-white text-stone-900 text-xs font-semibold uppercase tracking-wider shadow-sm flex items-center gap-1 transition-colors cursor-pointer"
+            className="px-3.5 py-2 bg-white/95 hover:bg-white text-stone-900 text-xs font-semibold uppercase tracking-wider shadow-sm flex items-center gap-1 transition-colors cursor-pointer"
           >
-            <span>Details</span>
-            <ArrowUpRight className="w-3.5 h-3.5" />
+            <span>{t.cta.details}</span>
+            <ArrowUpRight className="w-3.5 h-3.5 rtl:-scale-x-100" />
           </button>
 
           <button
@@ -50,22 +54,22 @@ export const ProductCard: React.FC<ProductCardProps> = ({
               e.stopPropagation();
               onQuickAddQuote(product);
             }}
-            className={`px-3 py-1.5 text-xs font-semibold uppercase tracking-wider shadow-sm flex items-center gap-1 transition-all cursor-pointer ${
+            className={`px-3.5 py-2 text-xs font-semibold uppercase tracking-wider shadow-sm flex items-center gap-1 transition-all cursor-pointer ${
               isInQuote
                 ? 'bg-emerald-800 text-white'
-                : 'bg-[#191919] hover:bg-black text-white active:scale-95'
+                : 'bg-[#191919] hover:bg-[#005EA8] text-white active:scale-95'
             }`}
-            title="Add to quotation inquiry"
+            title={t.cta.addToQuoteRequest}
           >
             {isInQuote ? (
               <>
                 <Check className="w-3.5 h-3.5" />
-                <span>In Quote</span>
+                <span>{t.cta.inQuote}</span>
               </>
             ) : (
               <>
                 <Plus className="w-3.5 h-3.5" />
-                <span>Quote</span>
+                <span>{t.cta.quote}</span>
               </>
             )}
           </button>
@@ -73,48 +77,45 @@ export const ProductCard: React.FC<ProductCardProps> = ({
       </div>
 
       {/* Product Information Body */}
-      <div className="p-5 flex-1 flex flex-col justify-between space-y-3">
+      <div className="p-6 flex-1 flex flex-col justify-between space-y-3.5">
         <div>
-          {/* Unboxed Metadata (Zero-Pill Discipline) */}
-          <div className="flex items-center gap-2 text-[11px] text-stone-500 font-mono mb-1.5">
-            <span className="uppercase tracking-wider font-semibold text-stone-700">
-              {product.model}
+          {/* Clean Unboxed Metadata */}
+          <div className="flex flex-wrap items-center gap-2 text-xs text-stone-700 mb-2">
+            <span className="uppercase tracking-wider font-bold text-[#005EA8]">
+              {loc.model}
             </span>
-            <span aria-hidden="true" className="text-stone-300">·</span>
-            <span className="uppercase tracking-wide">{product.categoryLabel}</span>
-            {product.nameCn && (
-              <>
-                <span aria-hidden="true" className="text-stone-300">·</span>
-                <span className="text-stone-600">{product.nameCn}</span>
-              </>
-            )}
+            <span aria-hidden="true" className="text-stone-400">·</span>
+            <span className="uppercase tracking-wide font-medium">{loc.categoryLabel}</span>
           </div>
 
           {/* Product Name */}
-          <h3 className="font-editorial text-xl font-bold text-[#191919] group-hover:text-stone-700 transition-colors leading-snug line-clamp-1">
-            {product.name}
+          <h3 className="font-editorial text-xl sm:text-2xl font-bold text-[#191919] group-hover:text-[#005EA8] transition-colors leading-snug line-clamp-2">
+            {loc.name}
           </h3>
 
           {/* Dimensions & Specifications */}
-          <p className="text-xs font-mono text-stone-600 mt-1">
+          <p className="text-sm text-stone-700 font-medium mt-1.5 tabular-nums">
             {product.dimensions.length}
-            {product.dimensions.depth ? ` × ${product.dimensions.depth}` : product.dimensions.width ? ` × ${product.dimensions.width}` : ''}
-            {product.dimensions.height ? ` · H ${product.dimensions.height}` : ''}
+            {product.dimensions.depth
+              ? ` × ${product.dimensions.depth}`
+              : product.dimensions.width
+              ? ` × ${product.dimensions.width}`
+              : ''}
+            {product.dimensions.height ? ` · ${t.productModal.heightShort} ${product.dimensions.height}` : ''}
           </p>
 
           {/* Short description / tagline */}
-          <p className="text-xs text-stone-500 line-clamp-2 mt-2 leading-relaxed">
-            {product.tagline || product.description}
+          <p className="text-sm text-stone-700 line-clamp-2 mt-2.5 leading-relaxed">
+            {loc.tagline || loc.description}
           </p>
         </div>
 
         {/* Footer info: Materials & Catalogue page reference */}
-        <div className="pt-3 border-t border-[#F0EFEB] flex items-center justify-between text-[11px] text-stone-400 font-mono">
-          <span className="truncate max-w-[70%] text-stone-500">
-            {product.materials[0]}
-          </span>
-          <span className="hover:text-stone-700 transition-colors font-semibold">
-            PDF P.{product.pageNumber}
+        <div className="pt-3.5 border-t border-[#F0EFEB] flex items-center justify-between text-xs text-stone-700 font-medium">
+          <span className="truncate max-w-[70%]">{loc.materials[0]}</span>
+          <span className="font-semibold text-stone-800 shrink-0">
+            {t.productModal.pdfPageShort}
+            {product.pageNumber}
           </span>
         </div>
       </div>

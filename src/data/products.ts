@@ -583,7 +583,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'cabinet-01-no3-sage',
-    model: '3号#',
+    model: 'No.3#',
     name: 'Sage & Sintered Stone Two-Drawer Nightstand',
     nameCn: '3号 尤加利绿岩板床头柜',
     category: 'chairs-tables',
@@ -627,7 +627,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'cabinet-03-no4-taupe',
-    model: '4号#',
+    model: 'No.4#',
     name: 'Taupe Leatherette Two-Drawer Nightstand',
     nameCn: '4号 软包极简床头柜',
     category: 'chairs-tables',
@@ -781,7 +781,7 @@ export const PRODUCTS: Product[] = [
       height: '112 cm',
       breakdown: 'Compatible with standard 180x200cm King mattress'
     },
-    frameSpec: 'Reinforced Ribbed Platform Slat Structure (排骨架: 加强型)',
+    frameSpec: 'Reinforced Ribbed Platform Slat Structure',
     materials: ['Supple Leather & Breathable Fabric', 'Reinforced Solid Pine Slats', 'Cold-Cured Sponge'],
     colors: ['Mocha Taupe', 'Oatmeal Cream'],
     features: ['Double-cushion backrest', 'Reinforced platform slat foundation', 'Anti-collision rounded corners'],
@@ -805,7 +805,7 @@ export const PRODUCTS: Product[] = [
       width: '210 cm',
       height: '115 cm'
     },
-    frameSpec: 'Reinforced Ribbed Platform Slat Structure (排骨架: 加强型)',
+    frameSpec: 'Reinforced Ribbed Platform Slat Structure',
     materials: ['Terracotta Saddle Leather', 'High-Density Sponge', 'Solid Wood Slats'],
     colors: ['Terracotta Orange', 'Saddle Brown'],
     features: ['Angled wrap-around headboard wings', 'Reinforced platform construction', 'Floating slim legs'],
@@ -829,7 +829,7 @@ export const PRODUCTS: Product[] = [
       width: '228 cm',
       height: '113 cm'
     },
-    frameSpec: 'Reinforced Ribbed Platform Slat Structure (排骨架: 加强型)',
+    frameSpec: 'Reinforced Ribbed Platform Slat Structure',
     materials: ['Semi-Aniline Leather', 'Cold-Molded Foam', 'Reinforced Wood Slat System'],
     colors: ['Warm Taupe', 'Chestnut Brown'],
     features: ['Curved enveloping wing headboard', 'Continuous upholstered side rails', 'Reinforced slat foundation'],
@@ -853,7 +853,7 @@ export const PRODUCTS: Product[] = [
       height: '115 cm',
       breakdown: 'Standard King / Queen mattress platform compatible'
     },
-    frameSpec: 'Reinforced Ribbed Platform Slat Structure (排骨架: 加强型)',
+    frameSpec: 'Reinforced Ribbed Platform Slat Structure',
     materials: ['Top-Grain Saddle Leather', 'Natural Cream Linen Fabric', 'Solid Beech Reinforced Ribbed Slat Base', 'Steel Frame'],
     colors: ['Saddle Tan & Cream Linen', 'Caramel'],
     features: ['Two-tone curved envelope headboard', 'Reinforced platform slat frame', 'Floating leg silhouette'],
@@ -878,7 +878,7 @@ export const PRODUCTS: Product[] = [
       height: '105 cm'
     },
     matchingItems: 'Matching Nightstand Model: S-36#',
-    frameSpec: 'Reinforced Ribbed Platform Slat Structure (排骨架: 加强型)',
+    frameSpec: 'Reinforced Ribbed Platform Slat Structure',
     materials: ['Full Top-Grain Leather', 'Dual Pillow Sponge Headboard', 'Reinforced Solid Wood Ribbed Slats'],
     colors: ['Cognac Brown', 'Warm Camel'],
     features: ['Dual split-pillow cushioned headboard', 'Reinforced ribbed platform slat foundation', 'Coordinating S-36# bedside tables'],
@@ -902,7 +902,7 @@ export const PRODUCTS: Product[] = [
       height: '114 cm'
     },
     matchingItems: 'Matching Nightstand Model: K21# and Matching Leather Stool',
-    frameSpec: 'Reinforced Ribbed Platform Slat Structure (排骨架: 加强型)',
+    frameSpec: 'Reinforced Ribbed Platform Slat Structure',
     materials: ['Top-Grain Terracotta Leather', 'High-Density Sponge', 'Heavy-Duty Reinforced Ribbed Slats'],
     colors: ['Terracotta Saddle Brown', 'Chestnut'],
     features: ['Expansive 238cm winged grid-tufted headboard', 'Reinforced platform slat frame', 'Matching K21# nightstands & leather ottoman'],
@@ -926,7 +926,7 @@ export const PRODUCTS: Product[] = [
       width: '189 cm',
       height: '119 cm'
     },
-    frameSpec: 'Reinforced Ribbed Platform Slat Structure (排骨架: 加强型)',
+    frameSpec: 'Reinforced Ribbed Platform Slat Structure',
     materials: ['Pistachio Sage Leatherette & Microfiber', 'High-Rebound Sponge', 'Reinforced Slats'],
     colors: ['Pistachio Sage Green', 'Soft Cream'],
     features: ['Curved top headboard profile', 'Double-piped edge detailing', 'Reinforced slat foundation'],
@@ -951,7 +951,7 @@ export const PRODUCTS: Product[] = [
       width: '202 cm',
       height: '119 cm'
     },
-    frameSpec: 'Reinforced Ribbed Platform Slat Structure (排骨架: 加强型)',
+    frameSpec: 'Reinforced Ribbed Platform Slat Structure',
     materials: ['Zero-Pressure Memory Foam', 'High-Resilience Sponge', 'Semi-Aniline Leather & Fabric', 'Solid Wood Frame'],
     colors: ['Sage Green & Warm Cream Two-Tone'],
     features: ['Zero-pressure memory foam layer', 'Two-tone contrasting padded headboard', 'Reinforced platform structure'],
@@ -974,7 +974,7 @@ export const PRODUCTS: Product[] = [
       width: '184 cm',
       height: '115 cm'
     },
-    frameSpec: 'Reinforced Ribbed Platform Slat Structure (排骨架: 加强型)',
+    frameSpec: 'Reinforced Ribbed Platform Slat Structure',
     materials: ['Burnt Orange Nappa Leather', 'High-Density Sponge', 'Reinforced Ribbed Slats'],
     colors: ['Burnt Orange', 'Cognac'],
     features: ['Diamond geometric headboard stitch pattern', 'Reinforced platform slat frame', 'Contemporary slim metal legs'],
@@ -998,7 +998,7 @@ export const PRODUCTS: Product[] = [
       height: '124 cm'
     },
     matchingItems: 'Matching olive green leather nightstand compatible',
-    frameSpec: 'Reinforced Ribbed Platform Slat Structure (排骨架: 加强型)',
+    frameSpec: 'Reinforced Ribbed Platform Slat Structure',
     materials: ['Olive Green Leather', 'High-Resilience Sponge Core', 'Reinforced Ribbed Slat Base'],
     colors: ['Olive Green', 'Deep Forest'],
     features: ['Tall 124cm headboard', 'Reinforced ribbed platform slats', 'Matching bedside table design'],
@@ -1021,7 +1021,7 @@ export const PRODUCTS: Product[] = [
       width: '190 cm',
       height: '116 cm'
     },
-    frameSpec: 'Reinforced Ribbed Platform Slat Structure (排骨架: 加强型)',
+    frameSpec: 'Reinforced Ribbed Platform Slat Structure',
     materials: ['Slate Grey Leather', 'High-Density Foam', 'Reinforced Solid Pine Slats'],
     colors: ['Slate Grey', 'Graphite'],
     features: ['Geometric clean headboard', 'Matching 2-drawer slate nightstand compatible', 'Reinforced platform structure'],

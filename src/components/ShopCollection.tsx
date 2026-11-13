@@ -1,7 +1,9 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { Product, PRODUCTS } from '../data/products';
 import { ProductCard } from './ProductCard';
-import { Search, Filter, SlidersHorizontal, RotateCcw } from 'lucide-react';
+import { Search, RotateCcw } from 'lucide-react';
+import { useLanguage } from '../i18n/LanguageContext';
+import { SERIES_TRANSLATIONS } from '../i18n/productTranslations';
 
 interface ShopCollectionProps {
   initialCategory?: 'all' | 'sofas' | 'recliners' | 'beds' | 'chairs-tables';
@@ -16,47 +18,50 @@ export const ShopCollection: React.FC<ShopCollectionProps> = ({
   onQuickAddQuote,
   quoteItemIds,
 }) => {
+  const { t, language, localizeProduct } = useLanguage();
   const [selectedCategory, setSelectedCategory] = useState<'all' | 'sofas' | 'recliners' | 'beds' | 'chairs-tables'>(initialCategory);
   const [selectedSeries, setSelectedSeries] = useState<string>('all');
   const [selectedMaterial, setSelectedMaterial] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [sortBy, setSortBy] = useState<'model' | 'page' | 'name'>('model');
 
-  // Filter products strictly based on PDF catalogue data
+  useEffect(() => {
+    setSelectedCategory(initialCategory);
+  }, [initialCategory]);
+
   const filteredProducts = useMemo(() => {
     return PRODUCTS.filter((item) => {
-      // Category filter
       if (selectedCategory !== 'all' && item.category !== selectedCategory) {
         return false;
       }
-      // Series filter
       if (selectedSeries !== 'all' && item.series !== selectedSeries) {
         return false;
       }
-      // Material filter
       if (selectedMaterial !== 'all') {
         const hasMat = item.materials.some((m) =>
           m.toLowerCase().includes(selectedMaterial.toLowerCase())
         );
         if (!hasMat) return false;
       }
-      // Search query filter
       if (searchQuery.trim()) {
         const query = searchQuery.toLowerCase();
+        const loc = localizeProduct(item);
         const matchModel = item.model.toLowerCase().includes(query);
-        const matchName = item.name.toLowerCase().includes(query);
-        const matchCn = item.nameCn?.toLowerCase().includes(query);
-        const matchDesc = item.description.toLowerCase().includes(query);
+        const matchName = item.name.toLowerCase().includes(query) || loc.name.toLowerCase().includes(query);
+        const matchCn = language === 'zh' && item.nameCn?.toLowerCase().includes(query);
+        const matchDesc = item.description.toLowerCase().includes(query) || loc.description.toLowerCase().includes(query);
         const matchDims = item.dimensions.length.toLowerCase().includes(query);
         return matchModel || matchName || matchCn || matchDesc || matchDims;
       }
       return true;
     }).sort((a, b) => {
       if (sortBy === 'page') return a.pageNumber - b.pageNumber;
-      if (sortBy === 'name') return a.name.localeCompare(b.name);
+      if (sortBy === 'name') {
+        return localizeProduct(a).name.localeCompare(localizeProduct(b).name);
+      }
       return a.model.localeCompare(b.model);
     });
-  }, [selectedCategory, selectedSeries, selectedMaterial, searchQuery, sortBy]);
+  }, [selectedCategory, selectedSeries, selectedMaterial, searchQuery, sortBy, language, localizeProduct]);
 
   const handleResetFilters = () => {
     setSelectedCategory('all');
@@ -69,79 +74,85 @@ export const ShopCollection: React.FC<ShopCollectionProps> = ({
     <div className="py-12 bg-[#FBFBFA]">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         {/* Page Title */}
-        <div className="mb-10 text-center sm:text-left">
-          <div className="flex flex-wrap items-center gap-2 text-xs font-mono uppercase tracking-widest text-stone-500 mb-2">
-            <span className="text-[#005EA8] font-semibold">5GOOD 天奥家具</span>
+        <div className="mb-10 text-center sm:text-start">
+          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 text-sm uppercase tracking-widest text-stone-700 mb-2 font-semibold">
+            <span className="text-[#005EA8]">{t.collection.kickerBrand}</span>
             <span>·</span>
-            <span>36-PAGE OFFICIAL CATALOGUE</span>
+            <span>{t.collection.kickerCatalog}</span>
             <span>·</span>
-            <span className="tabular-nums">{PRODUCTS.length} VERIFIED MODELS</span>
+            <span className="tabular-nums">
+              {PRODUCTS.length} {t.collection.kickerModels}
+            </span>
           </div>
           <h1 className="font-editorial text-4xl sm:text-5xl font-bold text-[#191919]">
-            TIANAO Furniture Collection · 天奥家具产品系列
+            {t.collection.title}
           </h1>
-          <p className="text-sm text-stone-600 max-w-2xl mt-2 font-sans leading-relaxed">
-            "坚持简约时尚，清新自然的设计风格，紧跟世界时尚潮流，呈现出与众不同的文化气质。"
-            Explore technical specifications, architectural dimensions, materials, and modular designs across Modern Luxury Series (现代豪华系列), High-End Minimalist Series (高端极简系列), and High-End Simple Luxury Series (高端简奢系列).
+          <p className="text-base text-stone-700 max-w-3xl mt-3 leading-relaxed">
+            {t.collection.subtitle}
           </p>
         </div>
 
         {/* Filter & Search Bar */}
-        <div className="bg-white border border-[#E8E6E1] p-4 sm:p-6 mb-8 shadow-2xs space-y-4">
+        <div className="bg-white border border-[#E8E6E1] p-5 sm:p-6 mb-8 shadow-2xs space-y-5">
           <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
             {/* Search Input */}
             <div className="relative flex-1">
-              <Search className="w-4 h-4 text-stone-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+              <Search className="w-4 h-4 text-stone-500 absolute start-3.5 top-1/2 -translate-y-1/2" />
               <input
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search by Model (e.g. TA-M04#, TA-EX01#, TA9106#), name, or material..."
-                className="w-full pl-10 pr-4 py-2.5 text-xs border border-stone-200 focus:border-black focus:outline-hidden bg-stone-50/50"
+                placeholder={t.collection.searchPlaceholder}
+                className="w-full ps-10 pe-16 py-3 text-base border border-stone-300 focus:border-[#005EA8] focus:outline-hidden bg-stone-50/50"
               />
               {searchQuery && (
                 <button
+                  type="button"
                   onClick={() => setSearchQuery('')}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-stone-400 hover:text-black"
+                  className="absolute end-3 top-1/2 -translate-y-1/2 text-sm text-stone-600 hover:text-black font-medium cursor-pointer"
                 >
-                  Clear
+                  {t.cta.clear}
                 </button>
               )}
             </div>
 
             {/* Sorting */}
             <div className="flex items-center gap-3">
-              <span className="text-xs font-mono text-stone-500 whitespace-nowrap">Sort By:</span>
+              <span className="text-sm text-stone-700 font-semibold whitespace-nowrap">
+                {t.collection.sortBy}
+              </span>
               <select
                 value={sortBy}
-                onChange={(e) => setSortBy(e.target.value as any)}
-                className="px-3 py-2 text-xs border border-stone-200 bg-white font-mono text-stone-700 focus:border-black focus:outline-hidden"
+                onChange={(e) => setSortBy(e.target.value as 'model' | 'page' | 'name')}
+                className="px-3.5 py-2.5 text-sm border border-stone-300 bg-white text-stone-800 focus:border-[#005EA8] focus:outline-hidden font-medium"
               >
-                <option value="model">Model Number (TA9000-Series)</option>
-                <option value="page">PDF Catalogue Page Order (1-36)</option>
-                <option value="name">Product Name (A-Z)</option>
+                <option value="model">{t.collection.sortModel}</option>
+                <option value="page">{t.collection.sortPage}</option>
+                <option value="name">{t.collection.sortName}</option>
               </select>
             </div>
           </div>
 
-          {/* Interactive Category Buttons (Allowed by Zero-Pill Section 1.A) */}
-          <div className="flex flex-wrap items-center gap-2 pt-2 border-t border-stone-100">
-            <span className="text-xs font-mono text-stone-400 mr-2">Category:</span>
+          {/* Interactive Category Buttons */}
+          <div className="flex flex-wrap items-center gap-2.5 pt-3 border-t border-stone-200">
+            <span className="text-sm font-semibold text-stone-700 me-2">
+              {t.collection.categoryLabel}
+            </span>
             {[
-              { id: 'all', label: `All Products (${PRODUCTS.length})` },
-              { id: 'sofas', label: `Sofas (${PRODUCTS.filter(p => p.category === 'sofas').length})` },
-              { id: 'recliners', label: `Power Motion (${PRODUCTS.filter(p => p.category === 'recliners').length})` },
-              { id: 'beds', label: `Luxury Beds (${PRODUCTS.filter(p => p.category === 'beds').length})` },
-              { id: 'chairs-tables', label: `Dining & Chairs (${PRODUCTS.filter(p => p.category === 'chairs-tables').length})` },
+              { id: 'all', label: `${t.collection.allProducts} (${PRODUCTS.length})` },
+              { id: 'sofas', label: `${t.collection.catSofas} (${PRODUCTS.filter((p) => p.category === 'sofas').length})` },
+              { id: 'recliners', label: `${t.collection.catRecliners} (${PRODUCTS.filter((p) => p.category === 'recliners').length})` },
+              { id: 'beds', label: `${t.collection.catBeds} (${PRODUCTS.filter((p) => p.category === 'beds').length})` },
+              { id: 'chairs-tables', label: `${t.collection.catChairs} (${PRODUCTS.filter((p) => p.category === 'chairs-tables').length})` },
             ].map((cat) => (
               <button
                 key={cat.id}
                 type="button"
-                onClick={() => setSelectedCategory(cat.id as any)}
-                className={`px-3 py-1.5 text-xs font-medium transition-colors cursor-pointer ${
+                onClick={() => setSelectedCategory(cat.id as typeof selectedCategory)}
+                className={`px-3.5 py-2 text-sm font-semibold transition-colors cursor-pointer ${
                   selectedCategory === cat.id
                     ? 'bg-[#191919] text-white shadow-xs'
-                    : 'bg-stone-100 text-stone-700 hover:bg-stone-200'
+                    : 'bg-stone-100 text-stone-800 hover:bg-stone-200'
                 }`}
               >
                 {cat.label}
@@ -150,62 +161,72 @@ export const ShopCollection: React.FC<ShopCollectionProps> = ({
           </div>
 
           {/* Secondary Filters: Series & Material */}
-          <div className="flex flex-wrap items-center justify-between gap-4 pt-2 border-t border-stone-100 text-xs">
+          <div className="flex flex-wrap items-center justify-between gap-4 pt-3 border-t border-stone-200 text-sm">
             <div className="flex flex-wrap items-center gap-3">
-              <span className="text-stone-400 font-mono">Series:</span>
+              <span className="text-stone-700 font-semibold">{t.collection.seriesLabel}</span>
               <select
                 value={selectedSeries}
                 onChange={(e) => setSelectedSeries(e.target.value)}
-                className="px-2.5 py-1 text-xs border border-stone-200 bg-white text-stone-700"
+                className="px-3 py-1.5 text-sm border border-stone-300 bg-white text-stone-800 font-medium"
               >
-                <option value="all">All 3 Series</option>
-                <option value="Modern Luxury Series">Modern Luxury Series (现代豪华系列)</option>
-                <option value="High-End Minimalist Series">High-End Minimalist Series (高端极简系列)</option>
-                <option value="High-End Simple Luxury Series">High-End Simple Luxury Series (高端简奢系列)</option>
+                <option value="all">{t.collection.allSeries}</option>
+                <option value="Modern Luxury Series">
+                  {SERIES_TRANSLATIONS[language]['Modern Luxury Series']}
+                </option>
+                <option value="High-End Minimalist Series">
+                  {SERIES_TRANSLATIONS[language]['High-End Minimalist Series']}
+                </option>
+                <option value="High-End Simple Luxury Series">
+                  {SERIES_TRANSLATIONS[language]['High-End Simple Luxury Series']}
+                </option>
               </select>
 
-              <span className="text-stone-400 font-mono ml-2">Material:</span>
+              <span className="text-stone-700 font-semibold ms-2">{t.collection.materialLabel}</span>
               <select
                 value={selectedMaterial}
                 onChange={(e) => setSelectedMaterial(e.target.value)}
-                className="px-2.5 py-1 text-xs border border-stone-200 bg-white text-stone-700"
+                className="px-3 py-1.5 text-sm border border-stone-300 bg-white text-stone-800 font-medium"
               >
-                <option value="all">All Materials</option>
-                <option value="Leather">Top-Grain Leather</option>
-                <option value="Bouclé">Textured Bouclé & Fabric</option>
-                <option value="Motorized">Motorized Power Motion</option>
-                <option value="Stone">Sintered Stone Top</option>
-                <option value="Walnut">Natural Walnut Wood</option>
+                <option value="all">{t.collection.allMaterials}</option>
+                <option value="Leather">{t.collection.matLeather}</option>
+                <option value="Bouclé">{t.collection.matBoucle}</option>
+                <option value="Motorized">{t.collection.matMotorized}</option>
+                <option value="Stone">{t.collection.matStone}</option>
+                <option value="Walnut">{t.collection.matWalnut}</option>
               </select>
             </div>
 
             {(selectedCategory !== 'all' || selectedSeries !== 'all' || selectedMaterial !== 'all' || searchQuery) && (
               <button
+                type="button"
                 onClick={handleResetFilters}
-                className="flex items-center gap-1.5 text-stone-500 hover:text-black text-xs font-mono underline cursor-pointer"
+                className="flex items-center gap-1.5 text-stone-700 hover:text-black text-sm font-semibold underline cursor-pointer"
               >
-                <RotateCcw className="w-3 h-3" />
-                <span>Reset Filters</span>
+                <RotateCcw className="w-4 h-4" />
+                <span>{t.cta.resetFilters}</span>
               </button>
             )}
           </div>
         </div>
 
         {/* Results Counter */}
-        <div className="flex items-center justify-between text-xs font-mono text-stone-500 mb-6 px-1">
-          <span>Showing {filteredProducts.length} verified catalogue items</span>
-          <span>Click any model to inspect dimensions and add to quotation</span>
+        <div className="flex flex-wrap items-center justify-between gap-2 text-sm text-stone-700 mb-6 px-1 font-medium">
+          <span>
+            {filteredProducts.length} {t.collection.showingCount}
+          </span>
+          <span>{t.collection.clickHint}</span>
         </div>
 
         {/* Product Grid */}
         {filteredProducts.length === 0 ? (
           <div className="py-20 text-center bg-white border border-[#E8E6E1] p-8 space-y-4">
-            <p className="text-stone-500 text-sm">No models match your current filter criteria.</p>
+            <p className="text-stone-700 text-base">{t.collection.emptyState}</p>
             <button
+              type="button"
               onClick={handleResetFilters}
-              className="px-4 py-2 bg-[#191919] text-white text-xs font-semibold uppercase tracking-wider"
+              className="px-5 py-2.5 bg-[#191919] text-white text-sm font-semibold uppercase tracking-wider cursor-pointer"
             >
-              Reset Filters
+              {t.cta.resetFilters}
             </button>
           </div>
         ) : (

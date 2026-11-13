@@ -2,6 +2,7 @@ import React from 'react';
 import { Product, PRODUCTS } from '../data/products';
 import { ProductCard } from './ProductCard';
 import { ArrowRight } from 'lucide-react';
+import { useLanguage } from '../i18n/LanguageContext';
 
 interface FeaturedSectionProps {
   onSelectProduct: (product: Product) => void;
@@ -16,31 +17,34 @@ export const FeaturedSection: React.FC<FeaturedSectionProps> = ({
   onViewAll,
   quoteItemIds,
 }) => {
+  const { t } = useLanguage();
   const featured = PRODUCTS.filter((p) => p.featured).slice(0, 6);
+  const viewAllLabel = `${t.cta.viewAllProducts} (${PRODUCTS.length})`;
 
   return (
-    <section className="py-24 bg-[#F5F4F0] border-b border-[#E8E6E1]">
+    <section className="py-20 sm:py-24 bg-[#F5F4F0] border-b border-[#E8E6E1]">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
           <div>
-            <span className="text-xs font-mono uppercase tracking-widest font-semibold text-[#005EA8] block mb-2">
-              CATALOGUE HIGHLIGHTS · 精选系列
+            <span className="text-sm uppercase tracking-widest font-semibold text-[#005EA8] block mb-2">
+              {t.featured.kicker}
             </span>
             <h2 className="font-editorial text-3xl sm:text-4xl lg:text-5xl font-bold text-[#191919]">
-              Featured Collection
+              {t.featured.title}
             </h2>
           </div>
           <button
+            type="button"
             onClick={onViewAll}
-            className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-stone-900 hover:text-[#005EA8] transition-colors cursor-pointer group whitespace-nowrap shrink-0"
+            className="flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-stone-900 hover:text-[#005EA8] transition-colors cursor-pointer group whitespace-nowrap shrink-0"
           >
-            <span>View All ({PRODUCTS.length}) Products</span>
-            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            <span>{viewAllLabel}</span>
+            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1 rtl:rotate-180" />
           </button>
         </div>
 
-        {/* 3-Column Responsive Grid (Section 2.A) */}
+        {/* 3-Column Responsive Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {featured.map((product) => (
             <ProductCard
@@ -55,22 +59,23 @@ export const FeaturedSection: React.FC<FeaturedSectionProps> = ({
 
         {/* Editorial Quote Banner */}
         <div className="mt-16 p-8 bg-white border border-stone-200 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="space-y-1 text-center md:text-left">
-            <span className="text-xs font-mono uppercase tracking-widest text-[#005EA8] font-semibold">
-              OFFICIAL MANUFACTURING PARTNERSHIP
+          <div className="space-y-1.5 text-center md:text-start">
+            <span className="text-sm uppercase tracking-widest text-[#005EA8] font-semibold block">
+              {t.featured.bannerKicker}
             </span>
-            <h3 className="font-editorial text-2xl font-bold text-stone-900">
-              Custom Architectural Dimensions &amp; Contract Orders Available
+            <h3 className="font-editorial text-2xl sm:text-3xl font-bold text-stone-900">
+              {t.featured.bannerTitle}
             </h3>
-            <p className="text-xs text-stone-600">
-              Direct factory manufacturing for residential villas, hotels, executive offices, and luxury commercial projects.
+            <p className="text-base text-stone-700 leading-relaxed">
+              {t.featured.bannerDesc}
             </p>
           </div>
           <button
+            type="button"
             onClick={onViewAll}
-            className="px-6 py-3 bg-[#191919] hover:bg-[#005EA8] text-white text-xs font-semibold uppercase tracking-wider transition-colors whitespace-nowrap shrink-0 cursor-pointer"
+            className="px-6 py-3.5 bg-[#191919] hover:bg-[#005EA8] text-white text-sm font-semibold uppercase tracking-wider transition-colors whitespace-nowrap shrink-0 cursor-pointer"
           >
-            Browse Complete Catalogue
+            {t.cta.browseCompleteCatalogue}
           </button>
         </div>
       </div>
