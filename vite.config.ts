@@ -18,6 +18,11 @@ export default defineConfig(() => {
     build: {
       outDir: 'dist',
       chunkSizeWarningLimit: 1000,
+      rolldownOptions: {
+        output: {
+          assetFileNames: 'assets/a-[hash][extname]',
+        },
+      },
     },
     server: {
       host: '0.0.0.0',
