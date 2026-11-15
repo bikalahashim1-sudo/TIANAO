@@ -38,13 +38,17 @@ export const Footer: React.FC<FooterProps> = ({
               <div>
                 <h3
                   dir="ltr"
-                  className="font-editorial text-2xl font-bold text-white tracking-wider inline-flex items-baseline gap-2"
+                  className="font-editorial text-2xl font-bold text-white tracking-tight uppercase leading-none"
                 >
-                  <span>TIANAO</span>
-                  <span lang="zh" className="font-semibold">天奥家具</span>
+                  TIANAO
                 </h3>
-                <p className="text-xs text-stone-400 uppercase tracking-wider font-medium">
-                  {t.footer.brandSub}
+                <p
+                  dir="ltr"
+                  className="text-xs tracking-[0.16em] text-stone-300 uppercase font-medium mt-1.5 inline-flex items-center gap-1.5 whitespace-nowrap"
+                >
+                  <span>FURNITURE</span>
+                  <span aria-hidden="true">·</span>
+                  <span lang="zh" className="tracking-normal">天奥家具</span>
                 </p>
               </div>
             </div>

@@ -307,38 +307,49 @@ export const Hero: React.FC<HeroProps> = ({
         </div>
       </div>
 
-      {/* Full-Width 4-Column Proof Metrics Ribbon */}
-      <div className="w-full bg-[#FBFBFA] border-b border-[#E8E6E1]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-8 py-6 grid grid-cols-2 sm:grid-cols-4 gap-6 text-stone-800">
-          <div>
-            <span className="tabular-nums text-2xl sm:text-3xl font-bold text-[#191919] block">
+      {/* Full-Width 4-Column Proof Metrics Ribbon with Living Room Backdrop */}
+      <div className="relative w-full overflow-hidden border-b border-[#E8E6E1] bg-[#141312]">
+        <img
+          src={IMAGES.heroLiving}
+          alt=""
+          aria-hidden="true"
+          referrerPolicy="no-referrer"
+          className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none"
+        />
+        <div
+          className="absolute inset-0 bg-gradient-to-r from-[#141312]/78 via-[#141312]/68 to-[#141312]/78"
+          aria-hidden="true"
+        />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 py-9 sm:py-12 grid grid-cols-2 sm:grid-cols-4 gap-6 text-white">
+          <div className="bg-black/25 sm:bg-black/20 backdrop-blur-[2px] p-4 border-s-2 border-[#F7D117]">
+            <span className="tabular-nums text-2xl sm:text-3xl font-bold text-white block">
               20,000 m²
             </span>
-            <span className="text-sm text-stone-700 font-medium">
+            <span className="text-sm sm:text-base text-stone-100 font-medium mt-1 block">
               {t.hero.metrics.factoryLabel}
             </span>
           </div>
-          <div>
-            <span className="tabular-nums text-2xl sm:text-3xl font-bold text-[#191919] block">
+          <div className="bg-black/25 sm:bg-black/20 backdrop-blur-[2px] p-4 border-s-2 border-[#F7D117]">
+            <span className="tabular-nums text-2xl sm:text-3xl font-bold text-white block">
               1,000 m²
             </span>
-            <span className="text-sm text-stone-700 font-medium">
+            <span className="text-sm sm:text-base text-stone-100 font-medium mt-1 block">
               {t.hero.metrics.showroomLabel}
             </span>
           </div>
-          <div>
-            <span className="tabular-nums text-2xl sm:text-3xl font-bold text-[#191919] block">
+          <div className="bg-black/25 sm:bg-black/20 backdrop-blur-[2px] p-4 border-s-2 border-[#F7D117]">
+            <span className="tabular-nums text-2xl sm:text-3xl font-bold text-white block">
               100+
             </span>
-            <span className="text-sm text-stone-700 font-medium">
+            <span className="text-sm sm:text-base text-stone-100 font-medium mt-1 block">
               {t.hero.metrics.staffLabel}
             </span>
           </div>
-          <div>
-            <span className="tabular-nums text-2xl sm:text-3xl font-bold text-[#005EA8] block">
+          <div className="bg-black/25 sm:bg-black/20 backdrop-blur-[2px] p-4 border-s-2 border-[#F7D117]">
+            <span className="tabular-nums text-2xl sm:text-3xl font-bold text-[#F7D117] block">
               {t.hero.metrics.fiveGoodTitle}
             </span>
-            <span className="text-sm text-stone-700 font-medium">
+            <span className="text-sm sm:text-base text-stone-100 font-medium mt-1 block">
               {t.hero.metrics.fiveGoodLabel}
             </span>
           </div>

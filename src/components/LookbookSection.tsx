@@ -43,14 +43,21 @@ export const LookbookSection: React.FC<LookbookSectionProps> = ({ onSelectProduc
             }}
             className="lg:col-span-7 group relative bg-[#1D1C1A] border border-stone-800 hover:border-amber-400/60 transition-colors overflow-hidden cursor-pointer flex flex-col justify-between text-start"
           >
-            <div className="relative aspect-[16/10] overflow-hidden">
+            <div className="relative aspect-[16/11] bg-[#EAE8E3] overflow-hidden flex items-center justify-center">
+              <img
+                src={IMAGES.taq078}
+                alt=""
+                aria-hidden="true"
+                referrerPolicy="no-referrer"
+                className="absolute inset-0 w-full h-full object-cover scale-110 blur-2xl opacity-75 pointer-events-none"
+              />
               <img
                 src={IMAGES.taq078}
                 alt="TA9078 Deep Lounge Sofa"
                 referrerPolicy="no-referrer"
-                className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                className="relative z-10 w-full h-full object-contain object-center transition-transform duration-500 ease-out group-hover:scale-[1.03]"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1D1C1A] via-transparent to-transparent opacity-80" />
+              <div className="absolute inset-x-0 bottom-0 h-12 z-20 pointer-events-none bg-gradient-to-t from-[#1D1C1A]/75 to-transparent" />
             </div>
 
             <div className="p-8 relative z-10 flex flex-col justify-between flex-1">
@@ -87,14 +94,21 @@ export const LookbookSection: React.FC<LookbookSectionProps> = ({ onSelectProduc
               }}
               className="group relative bg-[#1D1C1A] border border-stone-800 hover:border-amber-400/60 transition-colors overflow-hidden cursor-pointer flex-1 flex flex-col justify-between text-start"
             >
-              <div className="relative aspect-[16/9] overflow-hidden">
+              <div className="relative aspect-[4/3] bg-[#141312] overflow-hidden flex items-center justify-center">
+                <img
+                  src={IMAGES.taa2188}
+                  alt=""
+                  aria-hidden="true"
+                  referrerPolicy="no-referrer"
+                  className="absolute inset-0 w-full h-full object-cover scale-110 blur-xl opacity-35 pointer-events-none"
+                />
                 <img
                   src={IMAGES.taa2188}
                   alt="TAA2188 Tufted Wingback Leather Bed"
                   referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  className="relative z-10 w-full h-full object-contain object-center transition-transform duration-500 ease-out group-hover:scale-[1.03]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1D1C1A] via-transparent to-transparent opacity-70" />
+                <div className="absolute inset-x-0 bottom-0 h-14 z-20 pointer-events-none bg-gradient-to-t from-[#1D1C1A] to-transparent" />
               </div>
               <div className="p-6">
                 <div className="text-sm text-[#F7D117] font-semibold mb-1">
@@ -123,14 +137,21 @@ export const LookbookSection: React.FC<LookbookSectionProps> = ({ onSelectProduc
               }}
               className="group relative bg-[#1D1C1A] border border-stone-800 hover:border-amber-400/60 transition-colors overflow-hidden cursor-pointer flex-1 flex flex-col justify-between text-start"
             >
-              <div className="relative aspect-[16/9] overflow-hidden">
+              <div className="relative aspect-[4/3] bg-[#141312] overflow-hidden flex items-center justify-center">
+                <img
+                  src={IMAGES.taq810}
+                  alt=""
+                  aria-hidden="true"
+                  referrerPolicy="no-referrer"
+                  className="absolute inset-0 w-full h-full object-cover scale-110 blur-xl opacity-35 pointer-events-none"
+                />
                 <img
                   src={IMAGES.taq810}
                   alt="TA9810 Dual Power Recliner Console Sofa"
                   referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  className="relative z-10 w-full h-full object-contain object-center transition-transform duration-500 ease-out group-hover:scale-[1.03]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1D1C1A] via-transparent to-transparent opacity-70" />
+                <div className="absolute inset-x-0 bottom-0 h-14 z-20 pointer-events-none bg-gradient-to-t from-[#1D1C1A] to-transparent" />
               </div>
               <div className="p-6">
                 <div className="text-sm text-[#F7D117] font-semibold mb-1">

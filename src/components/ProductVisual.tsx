@@ -21,6 +21,7 @@ export const ProductVisual: React.FC<ProductVisualProps> = ({
 }) => {
   const [viewMode, setViewMode] = useState<'photo' | 'detail' | 'blueprint'>('photo');
   const [imageError, setImageError] = useState(false);
+  const [ambientBackdropUrl, setAmbientBackdropUrl] = useState<string | null>(null);
   const { t, localizeProduct } = useLanguage();
   const loc = localizeProduct(product);
 
@@ -44,6 +45,38 @@ export const ProductVisual: React.FC<ProductVisualProps> = ({
           : product.category === 'beds'
           ? IMAGES.bed01
           : IMAGES.chair9808);
+
+  const showAmbientBackdrop = Boolean(activeImage && ambientBackdropUrl === activeImage);
+
+  const handleImageLoad = (e: React.SyntheticEvent<HTMLImageElement>) => {
+    if (!activeImage) return;
+    try {
+      const img = e.currentTarget;
+      const canvas = document.createElement('canvas');
+      canvas.width = 12;
+      canvas.height = 12;
+      const ctx = canvas.getContext('2d', { willReadFrequently: true });
+      if (!ctx) return;
+      ctx.drawImage(img, 0, 0, 12, 12);
+      const pixels = ctx.getImageData(0, 0, 12, 12).data;
+      const corners = [
+        [0, 0],
+        [11, 0],
+        [0, 11],
+        [11, 11],
+      ];
+      let brightCorners = 0;
+      for (const [x, y] of corners) {
+        const idx = (y * 12 + x) * 4;
+        if (pixels[idx] > 232 && pixels[idx + 1] > 232 && pixels[idx + 2] > 232) {
+          brightCorners += 1;
+        }
+      }
+      setAmbientBackdropUrl(brightCorners >= 2 ? null : activeImage);
+    } catch {
+      setAmbientBackdropUrl(null);
+    }
+  };
 
   const primaryColor = product.colors[0] || 'Charcoal';
 
@@ -74,15 +107,29 @@ export const ProductVisual: React.FC<ProductVisualProps> = ({
     <div className={`relative overflow-hidden group bg-[#F5F4F0] ${aspectClass} ${className}`}>
       {viewMode !== 'blueprint' ? (
         activeImage && !imageError ? (
-          <div className="w-full h-full relative cursor-pointer" onClick={onImageClick}>
+          <div
+            key={activeImage}
+            className="w-full h-full relative cursor-pointer bg-white overflow-hidden flex items-center justify-center"
+            onClick={onImageClick}
+          >
+            {showAmbientBackdrop && (
+              <img
+                src={activeImage}
+                alt=""
+                aria-hidden="true"
+                referrerPolicy="no-referrer"
+                className="absolute inset-0 w-full h-full object-cover scale-110 blur-xl opacity-30 pointer-events-none"
+              />
+            )}
             <img
               src={activeImage}
               alt={loc.name}
               referrerPolicy="no-referrer"
+              onLoad={handleImageLoad}
               onError={() => setImageError(true)}
-              className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+              className="relative z-10 w-full h-full object-contain object-center transition-transform duration-500 ease-out group-hover:scale-[1.03]"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-t from-black/25 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </div>
         ) : (
           <div
