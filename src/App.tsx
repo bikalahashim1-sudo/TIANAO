@@ -18,6 +18,7 @@ import { Footer } from './components/Footer';
 import { ProductDetailModal } from './components/ProductDetailModal';
 import { QuoteDrawer, QuoteItem } from './components/QuoteDrawer';
 import { CatalogueModal } from './components/CatalogueModal';
+import { LanguageSwitcher } from './components/LanguageSwitcher';
 
 export default function App() {
   const [activeView, setActiveView] = useState<'home' | 'collection' | 'categories' | 'about' | 'contact'>('home');
@@ -210,6 +211,9 @@ export default function App() {
           setSelectedProduct(p);
         }}
       />
+
+      {/* Floating Bottom-Right Language Switcher */}
+      <LanguageSwitcher variant="floating" />
     </div>
   );
 }

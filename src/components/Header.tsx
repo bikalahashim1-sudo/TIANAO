@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Menu, X, FileText, PhoneCall, ChevronRight } from 'lucide-react';
 import { IMAGES } from '../assets/images';
 import { useLanguage } from '../i18n/LanguageContext';
-import { LanguageSwitcher } from './LanguageSwitcher';
 
 interface HeaderProps {
   activeView: 'home' | 'collection' | 'categories' | 'about' | 'contact';
@@ -123,10 +122,8 @@ export const Header: React.FC<HeaderProps> = ({
           ))}
         </nav>
 
-        {/* Zone 3: Language Switcher + Primary Action */}
+        {/* Zone 3: Primary Action */}
         <div className="flex items-center gap-2 sm:gap-3 shrink-0">
-          <LanguageSwitcher variant="header" />
-
           <button
             type="button"
             onClick={onOpenQuoteDrawer}
@@ -155,8 +152,6 @@ export const Header: React.FC<HeaderProps> = ({
       {/* Mobile Drawer Navigation */}
       {mobileMenuOpen && (
         <div className="lg:hidden border-t border-[#E8E6E1] bg-[#FBFBFA] px-6 py-6 space-y-4">
-          <LanguageSwitcher variant="mobile" onSelectComplete={() => setMobileMenuOpen(false)} />
-
           <div className="space-y-1">
             {navLinks.map((link) => (
               <button
